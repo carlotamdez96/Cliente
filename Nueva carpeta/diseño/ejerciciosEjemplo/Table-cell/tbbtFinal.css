@@ -1,0 +1,46 @@
+html {
+    background-color: lightgrey;
+    font-family: "segoe ui";
+}
+
+header {
+    background-color: white;
+    height: 4em;
+    font-family: inherit;
+    color: orange;
+    text-align: center;
+    line-height: 4em;
+}
+
+section {
+    width: 90%;
+    background-color: white;
+    margin: 2em auto;
+    display: table;
+    border-spacing: 5px;
+}
+
+article {
+    display: table-cell;
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    width: 33%;
+}
+
+img {
+    border: thin solid white;
+    display: block;
+    margin: 5px auto;
+}
+
+@media screen and (max-width: 600px) {
+    article {
+        display: table-row;
+    }
+
+    header {
+        font-size: .5em;
+    }
+}

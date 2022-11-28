@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor div{
+            margin: 50px;
+        }
+        .contenedor{
+            width: 900px;
+            height: 600px;
+            background-color: grey;
+            position: relative;
+        }
+        .contenedor :nth-child(1){
+            width: 200px;
+            height: 100px;
+            position:absolute;
+            top: 0;
+            left: 0;
+            background-color: aqua;
+        }
+        .contenedor :nth-child(2){
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* left: 300px; */
+            left: 500px;
+            z-index: 1;
+            top: 100px;
+            background-color: red;
+        }
+        .contenedor :nth-child(3){
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: 500px;
+            background-color: green;
+        }
+        .contenedor :nth-child(4){
+            width: 700px;
+            height: 100px;
+            top: 150px;
+            position: absolute;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div>Caja 1</div>
+        <div>Caja 2</div>
+        <div>Caja 3</div>
+        <div>Caja 4</div>
+    </div>
+    
+</body>
+</html>

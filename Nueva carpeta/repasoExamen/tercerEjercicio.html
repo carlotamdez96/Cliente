@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercer Ejercicio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            color: inherit;
+        }
+                ul{
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            background-color: cadetblue;
+            border-left: 0;
+        }
+        li{
+            display: table-cell;
+            text-align: center;
+            border:2px solid wheat;
+            width: 35%;
+
+        }
+        a{
+            display: block;
+            padding: 2em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">dibujo</a></li>
+            <li><a href="">saludo</a></li>
+            <li><a href="">lista compra</a></li>
+        </ul>
+    </nav>
+    <div class="panel"></div>
+    <script>
+        window.onload = function(){
+
+            //referenciamos los elementos
+            const misBotones = document.querySelectorAll("a");
+
+            //Manejadores de evento
+
+            for (const boton of misBotones) {
+                boton.addEventListener("click",realizaCambios);
+            }
+
+            //Funciones
+
+            function realizaCambios(){
+                var contenido = this.textContent;
+                switch(contenido){
+
+                    case "Inicio":
+
+
+                    break;
+                    case "dibujo":
+
+                    break;
+                    case "saludo":
+                        //Crear nodo de tipo Element
+                         var parrafo = document.createElement("p");
+
+                         //Crear el nodo de texto
+
+                         var cont = document.createTextNode("Hola!");
+
+                         //Añadir el nodo texto al elemento creado
+
+                         parrafo.appendChild(cont);
+
+                         // añadir el nodo element como hijo de la pagina
+                         document.body.appendChild(parrafo);
+                    break;
+                    case "lista compra":
+
+                    break;
+                }
+            }
+           
+        }
+    </script>
+</body>
+</html>

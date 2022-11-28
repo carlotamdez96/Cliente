@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Número de enlaces</title>
+</head>
+<body>
+	<font face="helvetica" color="white">
+	<body background="https://www.xyztimes.com/wp-content/uploads/2016/03/htc-m10-default-wallpaper.jpg">
+	<h1>¿Cuántos enlaces hay?</h1>
+	<p>Hola, soy un <a href="#" name="enlace1">enlace</a></p>
+	<p>Los <a name="enlace2">enlaces</a> son muy útiles</p>
+	<p>Pueden llevarnos a otros <a name="enlace3">sitios</a> web</p>
+	<p>Podemos usar <a name="enlace4">enlaces</a> para crear botones también.</p>
+
+	<p>Muestra aquí cuántos enlaces hay en este sitio:</p>
+	<span id="num_enlaces"></span>
+	
+	<script>
+		//Escribe aquí tu código Javascript
+
+    const h1 = document.querySelector("h1");
+	let h2 = document.createElement("h2");
+    h2.textContent="Esto es un h2";
+    document.body.appendChild(h2);
+    h2.addEventListener("click",desaparece);
+    h1.addEventListener("dblclick",reaparece);
+    function desaparece(){
+        h2.hidden=true;
+    }
+    function reaparece(){
+        h2.hidden=false;
+    }
+	</script>
+</body>
+</html>

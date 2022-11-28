@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../imagenes/portada2.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 580px;
+    height: 100vh;
+
+}
+section{
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 650px;
+    font-family: var(--fuente-principal);
+    padding: 20px;
+    font-size: 1.2em;
+}
+h1{
+    font-family: var(--fuente-h1);
+    font-size: 2em;
+    text-shadow: 0.1em 0.1em 0.2em rgb(111, 106, 106);
+}
+img{
+    height: 60px;
+    padding-top: 1px;
+    
+}
+.imagenesMaterias{
+    text-align: center;
+}
+p{
+   font-style: oblique;
+}
+section :nth-child(2){
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    
+}
+a{
+    text-decoration: none;
+    background-color:var( --color-letraNav) ;
+    
+    padding: 5px;
+    border: 2px dotted var(--color-bordes);
+    color: white;
+    
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+}
+a:hover{
+    background-color:var(--color-navegador) ;
+}

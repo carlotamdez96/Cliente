@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MenuSocial</title>
+    <style>
+        ul{
+            width: 160px;
+            /* quito los puntos de la lista desordenada*/
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            right: -120px;
+            top: calc(50% - 120px);
+        }
+        li{
+            /* caracteristicas generales de los li*/
+            color: white;
+            line-height: 40px;
+            background-image: url(./imagenes/social.gif);
+            background-repeat: no-repeat;
+            background-size: 40px;
+            background-position: left;
+            padding-left: 55px;
+            position: relative;
+            right: 0;
+            transition: right 0.5s;
+        }
+
+        li:nth-child(1){
+            background-color: #515151;
+            background-position: -1px -1px;
+        }
+        li:nth-child(2){
+            background-color: #366E85;
+            background-position: -1px -44px;
+        }
+        li:nth-child(3){
+            background-color: #127BB6;
+            background-position: -1px -88px;
+        }
+        li:nth-child(4){
+            background-color: black;
+            background-position: -1px -130px;
+        }
+        li:nth-child(5){
+            background-color: #EA4335;
+            background-position: -1px -175px;
+        }
+
+        li:hover{
+            cursor: pointer;
+            right: 120px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="https://es-es.facebook.com/">Facebook</a></li>
+        <li><a href="https://twitter.com/">Twiter</a></li>
+        <li><a href="https://www.linkedin.com/home?originalSubdomain=es">Linkedin</a></li>
+        <li><a href="https://buffer.com/">Buffer</a></li>
+        <li><a href="https://www.google.es/">Google+</a></li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primerEjercicio</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .contenedor{
+            width: 500px;
+            height: 300px;
+            background-color: rgb(98, 231, 231);
+            margin: 50px auto;
+        }
+        .display{
+            width: 100%;
+            height: 20%;
+            border: transparent;
+            background-color: transparent;
+            outline: none;
+        }
+        .botones{
+            width: 100%;
+        }
+        button{
+            width: 25%;
+            float: left;
+            border-radius: 30%;
+            color: rgb(9, 17, 17);
+            border-color: rgb(152, 197, 237);
+            background-color: blue;
+        }
+    </style>
+    <script>
+        //declaro
+        var operacion="";
+        var operando1=0;
+        var operando2=0;
+        var resultado="";
+
+        window.onload = function(){
+       
+            //Referencias
+            const display = document.querySelector("input");
+            const misDigitos = document.querySelectorAll('button[class="digito"]');
+            const misOperaciones = document.querySelectorAll('button[data-atributo]');
+            const efectoNuevo = document.querySelector('div[class="prueba"]');
+
+            // Manejadores de envento
+
+            for (const boton of misDigitos) {
+                boton.addEventListener("click",manejaOperador);
+            }
+            for(const boton of misOperaciones){
+                boton.addEventListener("click",realizaOperacion);
+            }
+
+            //Funciones
+
+           
+
+            function manejaOperador(){
+                if(operacion ==""){
+                    display.value = (display.value == 0)? display.value=this.textContent : display.value+=this.textContent;
+                }else {
+                    display.value = (display.value == "")? display.value = this.textContent : display.value += this.textContent;
+                }
+            }
+
+            function realizaOperacion(){
+                
+                var nombreOperacion = this.getAttribute("data-atributo");
+                switch(nombreOperacion){
+                    case "aritmetica":
+                    operando1= parseFloat(display.value);
+                    operacion = this.textContent;
+                    if(operacion == "x"){
+                            operacion="*";  
+                    }
+                    display.value="";
+                        break;
+                    case "resolver":
+                    operando2=parseFloat(display.value);
+                    let resultado = `${operando1} ${operacion} ${operando2}`;
+                    display.value=eval(resultado);
+                    cambiarCosas();
+                    break;
+            }
+        }
+        function cambiarCosas(){
+            efectoNuevo.innerHTML +=`<ul> 
+                <li>CALCULADORA RECIEN HECHA 1 </li>
+                <li> Saludos </li>
+            </ul>`;
+        }
+        
+    }
+     
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <input class="display">
+            <input type="text" name="display" class="display" readonly/>
+        </section>
+        <section class="botones">
+            <button class="digito">7</button>
+            <button class="digito">8</button>
+            <button class="digito">9</button>
+            <button data-atributo="aritmetica">x</button>
+            <button class="digito">4</button>
+            <button class="digito">5</button>
+            <button class="digito">6</button>
+            <button data-atributo="aritmetica">+</button>
+            <button class="digito">3</button>
+            <button class="digito">2</button>
+            <button class="digito">1</button>
+            <button data-atributo="aritmetica">-</button>
+            <button data-atributo="cambiarSigno">+/-</button>
+            <button>0</button>
+            <button data-atributo="coma">,</button>
+            <button data-atributo="resolver">=</button>
+        </section>
+        <div class="prueba"></div>
+    </div>
+    
+</body>
+</html>

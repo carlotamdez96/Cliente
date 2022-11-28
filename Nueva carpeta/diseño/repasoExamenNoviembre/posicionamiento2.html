@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento 2</title>
+    <style>
+        .contenedor div{
+            width: 200px;
+            height: 200px;
+            line-height: 170px; 
+            text-align: center;
+            vertical-align: middle;
+            font-size: 2em;
+            position: absolute;
+        }
+        .contenedor{
+        
+            position: relative;
+            background-color: grey;
+            width: 600px;
+            height: 600px;
+            
+            
+        }
+        .contenedor :nth-child(1){
+            
+            background-color: red;
+            left: 200px;
+            top: 20px;
+            z-index: 3;
+            
+        }
+        .contenedor :nth-child(2){
+            background-color: blue;
+            top: 100px;
+            left: 100px;
+            z-index: 2;
+          
+        }
+        .contenedor :nth-child(3){
+            background-color: green;
+            right: 40px;
+            top: 200px;
+            z-index: 0;
+        }
+        .contenedor :nth-child(4){
+            background-color: yellow;
+            top: 250px;
+            left: 200px;
+            z-index: 1;
+          
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    
+</body>
+</html>

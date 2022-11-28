@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            background-color: bisque;
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+
+        }
+        .contenedor div{
+            background-color: brown;
+            flex-basis: 20%;
+            /* flex-grow: 1;
+            flex-shrink: 1; */
+
+        }
+        .contenedor div:nth-child(1){
+            flex-grow: 2;
+        }
+        .contenedor div:nth-child(2){
+            flex-grow: 1;
+        }
+        .contenedor div:nth-child(3){
+            flex-grow: 5;
+        }
+        @media  (max-width: 600px){
+            .contenedor{
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div>Home</div>
+        <div>Contacta</div>
+        <div>About us</div>
+    </div>
+    
+</body>
+</html>

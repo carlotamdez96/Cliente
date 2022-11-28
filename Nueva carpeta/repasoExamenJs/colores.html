@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*estilos para el contenedor */
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*estilos al tablero*/
+
+.tablero {
+    width: fit-content;
+    height: fit-content;
+    /*borde negro con 1px de tamaÃ±o*/
+    border: 1px solid black;
+    padding: 3px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+/*estilos a las casillas del tablero*/
+
+.casillas {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    /*tablero 9x9 de 40x40*/
+    grid-template-rows: repeat(9, 40px);
+    grid-template-columns: repeat(9, 40px);
+    column-gap: 1px;
+    row-gap: 1px;
+}
+
+.casilla {
+    border: 1px solid black;
+}
+
+
+/*estilos a la paleta*/
+
+.paleta {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 20px;
+    grid-template-columns: repeat(6, auto);
+    column-gap: 1px;
+}
+
+
+/* vamos dando el fondo a cada color correspondiente*/
+
+#negro {
+    border: 1px solid black;
+    background-color: black;
+}
+
+#rojo {
+    border: 1px solid black;
+    background-color: red;
+}
+
+#verde {
+    border: 1px solid black;
+    background-color: green;
+}
+
+#azul {
+    border: 1px solid black;
+    background-color: blue;
+}
+
+#amarillo {
+    border: 1px solid black;
+    background-color: yellow;
+}
+
+#blanco {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.estado {
+    width: 100%;
+    border: 1px solid black;
+    margin: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*evento borrar*/
+
+#borrar {
+    margin-top: 3em;
+    color: blue;
+    background-color: aliceblue;
+    border: 1px solid;
+}
+    </style>
+    <script>
+        window.onload=function(){
+            var colorin="";
+            const botonColores= document.querySelectorAll(".color");
+        const botonSinColor = document.querySelectorAll(".casilla");
+
+        for (let color of botonColores) {
+            color.addEventListener("click",cogeColor);
+            function cogeColor(){
+             colorin=color.getAttribute("id");
+            }
+        }
+
+        function getColor(colorin){
+            switch(colorin){
+
+                case 'amarillo':
+                    colorin="yellow";
+                break;
+
+                case 'negro':
+                    colorin="black";
+                    break;
+                case 'verde':
+                    colorin="green";
+                    break;
+                case 'rojo':
+                    colorin="red";
+                    break;
+                case 'azul':
+                    colorin="blue";
+                break;
+            }
+        }
+        for (let casilla of botonSinColor) {
+            casilla.addEventListener("click",cambiaColor);
+            function cambiaColor(){
+                casilla.style.backgroundColor=getColor(colorin);
+            }
+        }
+        }
+        
+    </script>
+</head>
+<body>
+    <h3>TABLERO DE DIBUJO</h3>
+    <div class="container">
+        <div class="title">
+            SELECCIONA UN COLOR PARA PINTAR
+        </div>
+        <div class="tablero">
+            <div class="paleta">
+                <div class="color" id="amarillo"></div>
+                <div class="color" id="verde"></div>
+                <div class="color" id="negro"></div>
+                <div class="color" id="rojo"></div>
+                <div class="color" id="azul"></div>
+                <div class="color" id="blanco"></div>
+            </div>
+
+            <div class="estado">
+                <span id="estado">Pincel Desactivado</span>
+            </div>
+
+            <div class="casillas">
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+                <div class="casilla"></div>
+            </div>
+        </div>
+        <button id="borrar">BORRAR TABLERO</button>
+    </div>
+</body>
+</html>

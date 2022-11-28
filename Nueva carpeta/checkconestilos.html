@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Redio Buttoms con Estilos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/915ba3105a.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-size: 16px;
+            border: none;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            background: #ccc;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        html {
+            display: table;
+        }
+        
+        body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        button{
+           background-color: #f8e0b7;
+           cursor: pointer;
+        }
+        button:hover{
+            background-color: #EBBB67;
+        }
+        #examen {
+            width: calc(100% - 100px);
+            margin: 0 auto;
+            color: black;
+            background-color: black;
+            min-width: 450px;
+        }
+        .preguntas{
+            border: 2px solid black;
+        }
+        
+        #examen h1 {
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 44px;
+            padding-left: 20px;
+        }
+        
+        #pregunta {
+            width: 100%;
+            padding: 20px;
+            background-color: #FAFAFA;
+        }
+        
+        #pregunta input[type=radio] {
+            display: none;
+        }
+        
+        #pregunta label {
+            display: inline-block;
+            margin: 4px;
+            padding: 8px;
+            background: #FAE3BB;
+            color: #4C3000;
+            min-width: 200px;
+            cursor: pointer;
+        }
+        
+        #pregunta label:hover {
+            background-color: #EBBB67;
+        }
+        
+        #pregunta input[type=radio]:checked+label {
+            background: #CB8306;
+            color: #FAFAFA;
+        }
+    </style>
+
+   
+</head>
+
+<body>
+    <div id="examen">
+        <h1 id="nombrePregunta">Pequeño cuestionario</h1>
+
+        <div id="pregunta">
+        <div class="preguntas">
+            <p>¿En que año estamos?</p>
+            <input type="radio" name="pregunta1" value="correcta" id="respuesta1">
+            <label for="respuesta1">2022</label>
+            <input type="radio" name="pregunta1" value="incorrecta" id="respuesta2">
+            <label for="respuesta2">2021</label>
+            <input type="radio" name="pregunta1" value="incorrecta" id="respuesta3">
+            <label for="respuesta3">2023</label>
+        </div>
+
+        <div class="preguntas">
+            <p>¿De que color es el cielo?</p>
+            <input type="radio" name="pregunta2" value="incorrecta" id="r1">
+            <label for="r1">rojo</label>
+            <input type="radio" name="pregunta2" value="correcta" id="r2">
+            <label for="r2">azul</label>
+            <input type="radio" name="pregunta2" value="incorrecta" id="r3">
+            <label for="r3">marron</label>
+        </div>
+
+        <div class="preguntas">
+            <p>¿En que año murio la Reina Isabel</p>
+            <input type="radio" name="pregunta3" value="incorrecta" id="re1">
+            <label for="re1">2019</label>
+            <input type="radio" name="pregunta3" value="correcta" id="re2">
+            <label for="re2">2022</label>
+            <input type="radio" name="pregunta3" value="incorrecta" id="re3">
+            <label for="re3">2018</label>
+        </div>
+
+        <div class="preguntas">
+            <p>Si mezclas todos los colores ¿que color obtienes?</p>
+            <input type="radio" name="pregunta4" value="incorrecta" id="res1">
+            <label for="res1">rojo</label>
+            <input type="radio" name="pregunta4" value="incorrecta" id="res2">
+            <label for="res2">blanco</label>
+            <input type="radio" name="pregunta4" value="correcta" id="res3">
+            <label for="res3">negro</label>
+        </div>
+        </div>
+        <button><i class="fa-solid fa-clipboard-check"></i>Resuelve</button>
+    </div>
+
+
+
+
+    <script>
+        window.onload = function() {
+                let preguntas = document.querySelectorAll("input");
+                const miBoton = document.querySelector("button");
+                
+                miBoton.addEventListener("click",resuelve);
+                function resuelve(){
+                    for (let pregunta of preguntas) {
+                    
+                        let respuesta = pregunta.getAttribute("value");
+                        if(respuesta == "correcta"){
+                            pregunta.nextElementSibling.style.backgroundColor ="green"; 
+                        }else{
+                            pregunta.nextElementSibling.style.backgroundColor ="red";
+                        }
+                        
+
+                }
+                }
+                // Prueba de control de checked posterior al proceso. Lo hacemos clicando en el H1
+                // document.querySelector("h1").addEventListener("click", quienChecked);
+
+                // function quienChecked() {
+                //     for (let pregunta of preguntas) {
+                //         if (pregunta.checked) {
+                //             console.log(`La respuesta seleccionada es...${pregunta.value}`);
+                //         }
+                //     }
+                // }
+
+                // Prueba de control en evento change
+                // for (let pregunta of preguntas) {
+                //     pregunta.addEventListener("change", quienChange);
+                // }
+
+                // function quienChange() {
+                //     let seleccion = document.querySelector("#pregunta input[type=radio]:checked");
+                //     console.log(`Selección por change... ${seleccion.value}`);
+                // }
+
+            } // Final de onload
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .primero{
+        
+            width: 600px;
+            height: 600px;
+            background-color: red;
+            position: relative;
+        }
+        
+        
+        /* div::after{
+            content: "";
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-left: 100px solid rgb(116, 49, 192);
+            border-top: 100px solid green;
+            border-bottom: 100px solid rgb(214, 26, 142);
+            border-right: 100px solid yellow;
+           
+        } 
+        */
+        .primero::after{
+            content: "";
+            /* width: 100px;
+            height: 100px; */
+            position: absolute;
+            top: 600px;
+            left: 200px;
+            border-left: 100px solid rgba(116, 49, 192, 0);
+            border-top: 100px solid rgb(0, 128, 0);
+            border-bottom: 100px solid rgba(214, 26, 142, 0);
+            border-right: 100px solid rgba(255, 255, 0, 0);
+        }
+
+        .primero:hover::after{
+            content: "";
+            /* width: 100px;
+            height: 100px; */
+            position: absolute;
+            transform: rotate(270deg);
+            top: 200px;
+            left: 600px;
+            border-left: 100px solid rgba(116, 49, 192, 0);
+            border-top: 100px solid rgb(0, 128, 0);
+            border-bottom: 100px solid rgba(214, 26, 142, 0);
+            border-right: 100px solid rgba(255, 255, 0, 0);
+        }
+
+        
+
+    </style>
+<body>
+    <div class="primero"></div>
+    
+    
+</body>
+</html>

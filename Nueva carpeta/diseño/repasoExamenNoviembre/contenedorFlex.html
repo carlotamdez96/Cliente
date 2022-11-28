@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: bisque;
+            height: 100vh;
+            gap: 10px;
+
+        }
+        header div:nth-child(1){
+            background-color: red;
+            height: 100px;
+            flex-basis: 50%;
+            flex-grow: 2;
+            flex-shrink: 1;
+        }
+        header div:nth-child(2){
+            background-color: rgb(35, 191, 199);
+            height: 100px;
+            flex-basis: 20%;
+            flex-grow: 1;
+            flex-shrink: 10;
+        }
+        header div:nth-child(3){
+            background-color: rgb(164, 67, 213);
+            height: 100px;
+            flex-basis: 30%;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div></div>
+        <div></div>
+        <div></div>
+    </header>
+    
+</body>
+</html>

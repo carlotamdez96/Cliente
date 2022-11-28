@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuarto Ejercicio</title>
+    <script>
+        var botonPresionado = false;
+        window.onload = function(){
+            const miBoton = document.querySelector("button");
+
+            miBoton.addEventListener("click",cambiarColor);
+
+            function cambiarColor(){
+                let parrafo = document.querySelector("p");
+                if(botonPresionado){
+                    parrafo.style.color = "black";
+                    parrafo.style.fontSize = "0.5em";
+                    botonPresionado=false;
+                }else{
+                    parrafo.style.color = "orange";
+                    parrafo.style.fontSize = "3em";
+                    botonPresionado=true;
+                }
+               
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, sed sint saepe nostrum nemo deserunt similique, facilis dignissimos expedita provident dolorum repudiandae error minus, voluptates quod architecto veritatis! Quod, nostrum.
+        Temporibus veniam placeat, amet earum modi numquam saepe, repellat incidunt ducimus voluptatem et eaque totam illo atque eum iste maiores nobis laudantium autem itaque esse error. Eveniet ex incidunt consequatur.
+        Earum, dolores quasi. Quisquam vel repellendus, possimus minima ut odit eligendi recusandae provident labore consequatur illum dicta sint repellat voluptates commodi, unde qui numquam quia quos natus. Qui, fuga assumenda?
+        Esse, laborum eligendi? Distinctio officiis deleniti fugit voluptas deserunt inventore cum qui cupiditate libero excepturi repellat maiores obcaecati soluta modi numquam vero eum quidem, amet dolor nam assumenda ex tempore.
+        Modi, ab, beatae delectus facere ipsam debitis eos inventore dicta illum aliquam ullam repellat error repellendus nam distinctio odit culpa aspernatur corrupti consectetur quo. Numquam voluptatem accusantium suscipit perspiciatis nostrum.
+        Fuga tenetur aliquid eos amet minima, eum libero autem dicta accusantium inventore explicabo suscipit culpa doloribus, animi rerum consequuntur quibusdam quaerat deserunt recusandae nostrum nam fugit. Totam aut voluptas reiciendis.
+        Placeat pariatur unde obcaecati aspernatur a facilis, provident reiciendis. Nihil obcaecati adipisci aliquam eum perferendis voluptates a minima totam quasi autem veniam similique, doloremque, est dolore laudantium repellendus harum hic.
+        Repellendus sequi rerum expedita qui soluta beatae vitae doloribus vero distinctio magni non optio, consectetur voluptatum delectus laboriosam nisi dolor inventore vel cumque eveniet eum incidunt. Exercitationem eos cum fugit.
+        Recusandae nihil dignissimos incidunt architecto provident quod, explicabo dolore similique quae consectetur accusamus aut iure libero quibusdam dolor dolores eum dolorem necessitatibus illum voluptatem expedita a quam debitis tenetur? Deserunt!
+        Veritatis saepe esse quia iusto, totam, facilis, deleniti aliquam quidem quod distinctio est numquam? Et, deleniti exercitationem. Facilis commodi ab libero ut doloremque. Perspiciatis, ducimus nobis eaque saepe repellat fuga!</p>
+        <button>Púlsame</button>
+    </header>
+</body>
+</html>

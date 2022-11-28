@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Septimo</title>
+    <script>
+        window.onload = function(){
+
+        var pulsado = false;
+        // referencias 
+         const miBoton = document.querySelector("button");
+
+         //manejadores de evento
+
+         miBoton.addEventListener("click",mifuncion);
+
+         //funciones
+         function mifuncion(){
+
+            if(pulsado){
+                let titulo = document.querySelector("h1");
+                titulo.style.color = "red";
+                pulsado = false;
+            }else {
+                let parrafo = document.querySelector("p");
+            parrafo.style.color="orange";
+            parrafo.style.fontSize="2em";
+            parrafo.innerHTML+=`<div> Recien añadido un DIV </div>`;
+            pulsado = true;
+            }
+          
+         }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Septimo</h1>
+    </header>
+    <section>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, illo! Aperiam praesentium neque inventore. Cumque quas amet possimus qui quam vitae voluptates alias dicta placeat ipsum rem, sequi ab esse!
+        Laudantium enim maxime soluta dolores in neque dignissimos sint impedit autem possimus beatae, obcaecati atque quasi molestiae. Corrupti ratione temporibus dignissimos autem nobis debitis. Dicta sint architecto placeat ad accusantium.
+        Explicabo similique inventore ut quos, officiis excepturi, recusandae odit nesciunt harum ipsum deleniti nisi dolorem nemo, voluptatem illo assumenda minus adipisci? Voluptates quaerat fugit eius quidem recusandae dolore, quibusdam saepe?
+        Dolore nam ullam veniam debitis qui consectetur at, sapiente dolor iste vero adipisci, magni error accusamus obcaecati! Nobis pariatur totam eligendi optio repellendus. Doloremque perspiciatis, est optio numquam unde facilis!</p>
+        <button data-personal="boton1">Pulsa 1</button>
+    </section>
+    
+</body>
+</html>

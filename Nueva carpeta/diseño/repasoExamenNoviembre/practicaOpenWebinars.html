@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: grey;
+        }
+        .contenedor{
+            margin-top: 30px;
+            background-color: bisque;
+            width: 800px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        nav{
+            width: 100%;
+            height: 80px;
+            position: sticky;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            /* gap: 0px; */
+            list-style: none;
+            color: white;
+            background-color: rgb(103, 102, 102);
+           
+            
+        }
+        li{
+            text-align: center;
+            width: 25%;
+        }
+       
+        a{
+            padding: 10px;
+            color: white; 
+            display: block;
+            
+        }
+        a:hover{
+            background-color: rgb(173, 169, 169);
+        }
+        .contenedor div:nth-child(2){
+            border: 2px solid rgb(15, 14, 14);
+            position: fixed;
+            top: 70px;
+            width: 120px;
+            height: 170px;
+            left: 0;
+            background-color: white;
+            text-align: center;
+
+
+        }
+        .contenedor div:nth-child(2) img{
+            margin-bottom: 20px;
+            height: 100px;
+        }
+        div img{
+            width: 100px;
+        }
+        .contenedor div:nth-child(3){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            height: 100px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 10%;
+            position: relative;
+            transform: rotate(-20deg);
+            top: 120px;
+            right: 150px;
+        }
+        .contenedor div:nth-child(4){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            height: 100px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 10%;
+            position: relative;
+            top: 30px;
+            right: 10px;
+            transform: rotate(20deg);
+        }
+        
+
+        .contenedor div:nth-child(5){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            height: 100px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 10%;
+            position: relative;
+            transform: rotate(-40deg);
+            top: -80px;
+            left: 100px;
+        }
+        
+        .contenedor div:nth-child(6){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            height: 100px;
+            width: 200px;
+            border: 2px solid black;
+            border-radius: 10%;
+            position: relative;
+            transform: rotate(30deg);
+            bottom: 130px;
+            left: 200px;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                
+            </ul>
+        </nav>
+        <div class="contacto">
+            <img src="./imagenSinFoto.png" alt="foto contacto">
+            <p>Perfil de Carlota Menendez</p>
+        </div>
+        <div>
+            <img src="./equipo.jpg" alt="equipo">
+            <p>Imagen de un Equipo</p>
+        </div>
+        <div>
+            <img src="./estudiando.jpg" alt="gente estudiando">
+            <p>Gente estudiando</p>
+        </div>
+        <div>
+            <img src="./ordenador.jpg" alt="imagen de un ordenador">
+            <p>Estudiando con un ordenador</p>
+        </div>
+        <div>
+            <img src="./mar.jpg" alt="oceano">
+            <p>Vacaciones futuras..</p>
+        </div>
+    </div>
+</body>
+</html>

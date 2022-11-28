@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Calculadora 2022</title>
+    <link rel="stylesheet" href="../css/calculadora01.css">
+    <script src="../script/funcionesCalculadora.js"></script>
+</head>
+<div class="contenedor">
+<body>
+    <main>
+        <header>
+            <img src="../imagenes/estrella.png" alt="estrella">
+            <span>Estándar</span>
+
+
+            <p> CALCULADORA <img class="logo" src="../imagenes/cifpLalaboral.png" alt="La laboral"></p>
+
+        </header>
+
+        <section class="display">
+            <input type="text" name="display" class="display" value="0" readonly>
+        </section>
+        <section class="botones">
+            <div class="memoria">
+                <button data-operacion="borrarmemoria">MC</button>
+                <button data-operacion="recuperarmemoria">MR</button>
+                <button data-operacion="sumamemoria">M+</button>
+                <button data-operacion="restamemoria">M-</button>
+                <button data-operacion="almacenamemoria">MS</button>
+                <button data-operacion="muestramemoria"> M&#9660;</button>
+            </div>
+            
+            <button data-operacion="unario">%</button>
+            <button data-operacion="borrarParcial">CE</button>
+            <button data-operacion="borrarTotal">C</button>
+            <button data-operacion="retroceso">&#x232b</button>
+            <button data-operacion="digitoespecial">&#960</button>
+            <button data-operacion="digitoespecial">e</button>
+            <button data-operacion="unario">sin</button>
+            <button data-operacion="unario">cos</button>
+            <button data-operacion="unario">1/<small>x</small></button>
+            <button data-operacion="unario">x<sup>2</sup></button>
+            <button data-operacion="unario">&#8730</button>
+            <button data-operacion="aritmetica">&#247</button>
+            <button class="digito">7</button>
+            <button class="digito">8</button>
+            <button class="digito">9</button>
+            <button data-operacion="aritmetica">x</button>
+            <button class="digito">4</button>
+            <button class="digito">5</button>
+            <button class="digito">6</button>
+            <button data-operacion="aritmetica">-</button>
+            <button class="digito">1</button>
+            <button class="digito">2</button>
+            <button class="digito">3</button>
+            <button data-operacion="aritmetica">+</button>
+            <button class="digito">+/-</button>
+            <button class="digito">0</button>
+            <button data-operacion="coma">,</button>
+            <button data-operacion="resolver">=</button>
+
+        </section>
+    </main>
+    <div class="memoria-detalle"></div>
+</div>
+</body>
+
+</html>

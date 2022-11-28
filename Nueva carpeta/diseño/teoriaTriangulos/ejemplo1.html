@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo1</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: relative;
+            top: 100px;
+            left: 200px;
+        }
+        div::before{
+            content: "";
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            transform: rotate(60deg);
+            z-index: -1;
+
+        }
+        div::after{
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            transform: rotate(30deg);
+            z-index: -2;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>

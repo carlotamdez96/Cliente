@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            background-color: rgb(111, 177, 243);
+            position: absolute;
+            width: auto;
+            height: auto;
+            top: 30%;
+            bottom: 30%;
+            left: 10%;
+            right: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 120px;
+        }
+        .contenedor :nth-child(1){
+            position: relative;
+            background-color: yellow;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            
+        }
+        .contenedor :nth-child(1)::after{
+            position: absolute;
+            display: block;
+            content: "";
+            border-bottom: 40px solid transparent;
+            border-top: 40px solid transparent;
+            border-left: 40px solid transparent;
+            border-right: 50px solid rgb(111, 177, 243);
+            top: 10px;
+            left: 10px;
+        }
+        .contenedor :nth-child(1)::before{
+            position: absolute;
+            display: block;
+            content: "";
+            border-radius: 50%;
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            top: 15px;
+            left: 40px;
+        }
+        .contenedor :nth-child(1):hover{
+            left: 100px;
+            z-index: 1;
+
+        }
+
+        .contenedor :nth-child(2){
+            position: relative;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            right: 120px;
+        }
+        .contenedor :nth-child(2)::after{
+            position: absolute;
+            display: block;
+            content: "";
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            left: 50px;
+
+        }
+        .contenedor :nth-child(2)::before{
+            position: absolute;
+            display: block;
+            content: "";
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            left: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

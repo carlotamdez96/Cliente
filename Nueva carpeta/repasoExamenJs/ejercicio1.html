@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+        const boton = document.querySelector("button");
+        boton.addEventListener("click",funcionClick);
+        boton.addEventListener("mousedown",functionRaton1);
+        boton.addEventListener("mouseenter",señalaPuntero);
+        boton.addEventListener("mouseleave",punteroNoSeñala);
+        
+        boton.draggable=true;
+        function punteroNoSeñala(){
+            boton.style.backgroundColor="green";
+        }
+        function señalaPuntero(){
+            boton.style.backgroundColor="red";
+        }
+        function funcionClick(){
+            boton.textContent="Has hecho click";
+            boton.hidden=true;
+        }
+        function functionRaton1(){
+            boton.textContent="Has pulsado un boton del raton";
+            boton.removeEventListener("mouseleave",punteroNoSeñala);
+        }
+    }
+    </script>
+</head>
+<body>
+    <button>Hola!</button>
+    
+</body>
+</html>

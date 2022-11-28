@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .primero,.segundo{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 50px auto;
+        }
+        .primero{
+            background-color: yellow;
+
+        }
+
+        .primero::before{
+           position: absolute;
+           content: "";
+           background-color: red;
+           z-index: -1;
+           width: 300px;
+           height: 300px; 
+           transform: rotate(20deg);
+
+        }
+        .primero::after{
+            position: absolute;
+            content: "";
+            background-color: green;
+            width: 300px;
+            height: 300px; 
+            transform: rotate(60deg);
+            z-index: -1;
+        }
+        .segundo{
+            background-color: blue;
+            transform: rotate(-10deg);
+            top: -320px;
+        }
+        .segundo::after{
+            position: absolute;
+            content: "";
+            background-color: rgb(253, 86, 114);
+            width: 300px;
+            height: 300px; 
+            transform: rotate(-120deg);
+            z-index: 1;
+
+        }
+        .segundo::before{
+            position: absolute;
+            content: "";
+            background-color: violet;
+            width: 300px;
+            height: 300px; 
+            transform: rotate(30deg);
+        }
+        p{
+            position: relative;
+            z-index: 2;
+            bottom:550px;
+            left: calc(50% - 60px);
+            font-size: 2em;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="primero"></div>
+    <div class="segundo"></div>
+    <p>Hola Saul!</p>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genera Botonera</title>
+    <script>
+        window.onload=function(){
+            const miBoton = document.querySelector(".principal").addEventListener("click",generaCuadros);
+            const input = document.querySelector("input");
+            const areaTrabajo = document.querySelector(".botones");
+
+            function generaCuadros(){
+                let numero = input.value;
+                areaTrabajo.innerText="";
+                let contador=1;
+                for(let i=1;i<=numero;i++){
+                    for (var j = 1; j <= numero; j++){
+                    
+                    const boton = document.createElement("button");
+                    let texto =`fila:${i} columna ${j}`
+                    boton.classList.add("adicional");
+                    boton.classList.add(j);
+            
+                    boton.textContent=contador;
+                    contador++;
+                    areaTrabajo.appendChild(boton);
+                    
+                    }
+                    
+                    areaTrabajo.appendChild(document.createElement("br"));
+                    
+                }
+                const botones = document.querySelectorAll(".adicional");
+                for (let b of botones) {
+                    b.addEventListener("click",funcionMiniBotones);
+                    function funcionMiniBotones(){
+                    let div = document.createElement("div");
+                    div.textContent="Columna: "+b.textContent;
+
+                    areaTrabajo.appendChild(div);
+                }
+                }
+
+            }
+           
+           
+           
+        }
+    </script>
+</head>
+<body>
+    <div class="datos">
+        <label for="dimension">Dimension:</label>
+        <input type="text" id="dimension">
+        <button class="principal">Genera botonera</button>
+    </div>
+    <div class="botones"></div>
+    
+</body>
+</html>

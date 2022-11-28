@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas cortinilla1</title>
+    <style>
+        p{
+           bottom: 0;
+           position: relative;
+            
+        }
+        section{
+            border: 2px solid red;
+            height: 400px;
+            width: 500px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        
+    </style>
+    <script>
+        var lineas = 16;
+        window.onload = function(){
+
+            //Referencias
+            const parrafo = document.querySelector("p");
+
+            //majeador de eventos
+            document.querySelector("button").addEventListener("click",mueveTexto);
+            parrafo.style.bottom="0px";
+
+            
+            //funciones
+
+            function mueveTexto(){
+
+                
+                var contenido = parseInt(parrafo.style.bottom);
+                var contenido2 = (contenido == 0)? lineas : contenido+=lineas;
+                parrafo.style.bottom=`${contenido2}px`;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+    <section>
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat minus doloremque explicabo expedita optio quo eius voluptatem vel delectus corrupti non, numquam voluptas odit dicta voluptate rerum quia quisquam. Inventore.
+        Illo reprehenderit debitis odit quod suscipit? Temporibus accusamus numquam error, asperiores maxime aliquid? Enim labore eius minima laborum voluptatum facere ut accusamus alias. Iusto sunt eligendi nisi est velit ullam?
+        Fugiat deleniti minus provident repellat inventore totam temporibus quos facilis fugit molestiae. Facilis, cupiditate? Explicabo quidem, vel numquam alias quisquam tempore quis at debitis aliquid ipsum id eligendi esse facilis?
+        Repudiandae repellendus, aperiam ea ex atque suscipit vero beatae culpa qui? Voluptates odit, tenetur nisi animi sapiente vitae aliquid recusandae impedit! Velit, quis exercitationem laboriosam dolorum eaque tenetur sit incidunt.
+        Tenetur repellendus nihil fugiat perferendis reprehenderit, magni libero ratione voluptatibus aspernatur. Ipsam minus autem, commodi nihil non qui praesentium inventore numquam ducimus ea pariatur iste, ullam cupiditate asperiores, quis et!
+        Dolore cupiditate iure ea saepe quos nobis nulla! Aspernatur adipisci, quibusdam, atque, iure illum provident eligendi hic cum ab voluptas a tempora possimus. Neque, nihil doloribus asperiores distinctio sunt perferendis!
+        Maxime numquam pariatur, non tempore libero voluptatum officia asperiores alias placeat aut accusamus cumque reprehenderit ducimus quia incidunt sequi, facere odit. Consequatur accusamus sequi totam, iste unde dignissimos blanditiis quia?
+        Facilis nam perferendis incidunt? Vero sint dicta adipisci repellat quis est ullam, laboriosam quod magni beatae, animi quam error, ipsa non at repellendus odit amet delectus omnis totam molestias. Illum!
+        Fugit id iusto, ad ipsa enim laboriosam iure quidem vitae voluptates, sed totam. Nihil illo eligendi sit veniam minima. Sequi possimus autem suscipit aliquid animi iure ut deleniti rem nisi!
+        Cupiditate quia fugiat earum quis dolorum magni at repellendus voluptate, nesciunt quam corporis voluptatibus error nisi adipisci unde obcaecati sit natus blanditiis quas eaque commodi debitis nam! Non, ad exercitationem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sint, magnam alias minus fuga quia dolorum deleniti illo nulla, temporibus ad laborum impedit nostrum, corrupti enim suscipit officiis ratione facere?</p>
+        
+    </section>
+    <button>Pulsa</button>
+</div>
+</body>
+</html>

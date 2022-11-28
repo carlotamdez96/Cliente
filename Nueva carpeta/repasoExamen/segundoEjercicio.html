@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo Ejercicio</title>
+</head>
+<body>
+
+<form>
+    <input class="precio" type="number">
+    <input class="cantidad" type="number">
+    <input type="button" id="enviar" value="Calcular" class="button">
+    <input id="total" class="resultado" readonly>
+    </form>
+    
+    <script>
+        window.onload = function(){
+
+            //
+            operacion = "*";
+            operando1 =0;
+            operando2=0;
+            //referencias
+            const miBoton = document.querySelector('input[class="button"]');
+            const miOperador1 = document.querySelector('input[class="precio"]');
+            const miOperador2 = document.querySelector('input[class="cantidad"]');
+            const display = document.querySelector('input[class="resultado"]');
+
+            // manejadores de evento
+            miBoton.addEventListener("click",resuelve);
+         
+            //Funcion
+
+            function resuelve(){
+               
+                    display.value = miOperador1.value * miOperador2.value
+                    
+                }
+            }
+        
+    </script>
+    
+</body>
+</html>

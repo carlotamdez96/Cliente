@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexto</title>
+    <script>
+
+        window.onload = function(){
+
+            //referenciamos los elementos
+            const miBoton = document.querySelector('button[class="primero"]');
+            const parrafor = document.querySelector("p");
+            //manejador de evento
+
+            miBoton.addEventListener("click",funcionBoton);
+
+            //funciones
+
+            function funcionBoton(){
+
+                // Creamos el nodo de tipo Element
+                 var botonnuevo = document.createElement("button");
+
+                 // Creamos el contenido
+
+                 var contenido = document.createTextNode("Pincha 2");
+
+                 // Añadimos el nodo text como hijo del elemento
+
+                 botonnuevo.appendChild(contenido);
+                 //document.body.appendChild(botonnuevo);
+                 let seccion = document.querySelector("section");
+                 seccion.appendChild(botonnuevo);
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1> El sexto ejercicio</h1>
+    </header>
+    <section>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum laborum dicta fuga quam blanditiis maiores voluptas, aspernatur quibusdam harum ducimus aut ullam error rem doloremque sint suscipit atque perferendis animi.
+        Atque modi id perspiciatis quae dolore eum facere reprehenderit, saepe dolores. Dolor nostrum pariatur eaque quidem cumque voluptate, voluptates, a ex non harum consectetur nobis, molestias perferendis temporibus veniam autem.
+        Quos odio quibusdam nihil corrupti totam sint, optio soluta aperiam. Excepturi dignissimos deserunt quas, animi harum tenetur ratione fuga nemo iusto inventore suscipit veniam eius optio laborum. Veritatis, provident praesentium.
+        Accusamus eaque expedita ipsum! Aliquam illum repudiandae facilis ipsum consectetur dolorem dolore esse amet, nemo laboriosam saepe alias assumenda a blanditiis, maiores sit, rem perferendis nam doloremque sint suscipit exercitationem.
+        Repellat nihil facilis earum laborum et animi excepturi quas sit illo labore assumenda, quia delectus perferendis repellendus. Eius quam exercitationem, vitae quod sit voluptas, ex molestiae error debitis eligendi omnis!
+        Aspernatur, mollitia beatae cupiditate itaque repellat iusto blanditiis enim voluptatibus tenetur nulla? Repellat debitis, iure dolore porro velit magnam adipisci, quae beatae obcaecati eaque provident mollitia odit, rem laboriosam ratione!
+        Eligendi consectetur tenetur at numquam. Accusantium ab provident libero, minus excepturi temporibus molestiae, aliquam autem vitae explicabo ipsam ducimus ad incidunt magni quae perferendis. Ut rem neque adipisci incidunt in.
+        Facere velit fugit necessitatibus modi adipisci! Consequatur, deserunt cum necessitatibus maxime aliquam blanditiis id dicta iusto ullam aspernatur eligendi! Veniam vitae dicta possimus dignissimos alias at quaerat, dolore odio nemo?
+        Sunt doloribus delectus debitis aspernatur, voluptatibus omnis eos assumenda vel dolor. Magnam quis ut, voluptates beatae ipsum autem molestiae eveniet soluta, omnis iure necessitatibus! Similique voluptas facere repellat minima corporis?
+        Fugit, veritatis modi. Minus voluptas asperiores totam at magnam distinctio, labore illum voluptatibus non atque ullam modi incidunt iste nemo quia voluptates quis necessitatibus accusamus! Inventore modi ad officiis! Nobis.</p>
+        <button class="primero">Pincha 1</button>
+    </section>
+</body>
+</html>

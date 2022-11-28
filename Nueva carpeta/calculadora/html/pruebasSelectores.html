@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p {
+            color: rgb(10, 10, 10); 
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            color: red;
+        }
+        p span {
+            color: brown;
+            /* Todos los span incluidos en un p */
+        }
+        main h2{
+            /* Todos los h2 incluidos en el main */
+
+            color: pink;
+        }
+        main p span strong {
+            /* todos los strong incluidos dentro de un span, incluidos dentro de un p dentro un main */
+            color: yellow;
+        }
+
+        #primero {
+            text-decoration: underline;
+        }
+
+        p * a {
+            color: red;
+            /* todos los elementos de tipo a que se encuentren dentro de cualquier elemento que a su vez se encuentre dentro de un elemento de tipo p */
+        }
+
+        /* mirar porque valor se pone en azul */
+
+    </style>
+    <title>Selectores pruebas</title>
+</head>
+<body>
+    <h1>Ejemplos</h1>
+   <main>
+    <h2> Ejemplos selector descendente</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span>Reiciendis et <strong>assumenda</strong>  Strong dentro de un span dentro de un p /in quidem? Dicta placeat</span>, earum temporibus maxime ex blanditiis itaque laudantium ratione. Pariatur aut saepe dolorem autem ipsa fugiat.</p>
+    <p id="primero"><a href="hola">valor  </a>Totam, corporis minima quidem sed adipisci doloribus voluptatum cum fugiat exercitationem cumque a. Animi dolorum fugiat, corporis eos deleniti nihil maiores sit corrupti hic cupiditate fugit cum. Culpa, nisi fugit?</p>
+    <p><span><a href="">valor con * </a></span>Non, dolorum deserunt fuga quia magnam eum iusto impedit itaque sint corrupti porro, voluptas ratione reiciendis laudantium hic minima obcaecati enim! Labore amet eligendi odit eius enim maiores libero ratione?</p>
+    <p>Iure nemo nulla, a repudiandae asperiores eos! Beatae ipsa enim sapiente ullam aspernatur, quibusdam voluptatem molestias, eligendi numquam minus nemo laudantium explicabo dolore est. Ea deserunt magni voluptas quae ipsum?</p>
+    <p>Voluptatum, facilis corporis! A placeat quaerat sequi? Excepturi obcaecati aliquam laudantium perspiciatis ipsum! Quas modi quibusdam exercitationem accusamus rem ducimus in, dolorum eveniet nobis omnis aliquid esse blanditiis ex explicabo.</p>
+   </main>
+   <footer>
+
+   </footer>
+    
+</body>
+</html>

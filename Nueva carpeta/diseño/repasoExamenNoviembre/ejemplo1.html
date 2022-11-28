@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            width: auto;
+            height: auto;
+            top:30%;
+            bottom: 30%;
+            left: 10%;
+            right: 10%;
+        }
+        div:only-child{
+            background-color: aliceblue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+
+        }
+        div:only-child::after{
+            content: "";
+            position: absolute;
+            display: block;
+            border-bottom: 50px solid red;
+            border-top: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-left: 50px solid transparent;
+            transform: rotate(180deg);
+        }
+        div:only-child::before{
+            content: "";
+            position: absolute;
+            display: block;
+            border-radius: 10em;
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            top: -50px;
+            left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div></div>
+    </div>
+</body>
+</html>

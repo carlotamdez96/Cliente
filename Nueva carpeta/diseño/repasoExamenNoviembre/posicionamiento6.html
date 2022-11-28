@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            margin: 0 auto;
+            background-color: bisque;
+            width: 800px;
+            height: 80vh;
+            position: relative;
+        }
+        .position{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 80px;
+            margin: 10px;
+        }
+        .relative{
+            background-color: red;
+            position: relative;
+            right: -100px;
+            margin: 100px;
+        }
+        .absolute{
+            background-color: blue;
+            position: absolute;
+            width: auto;
+            height: auto;
+            top: 30%;
+            bottom: 30%;
+            right: 10%;
+            left: 10%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="position relative">relative</div>
+        <div class="position absolute">absolute</div>
+        <div class="position relative">relative</div>
+    </div>
+    
+</body>
+</html>

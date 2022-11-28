@@ -1,0 +1,171 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+header{
+    width: 100.3%;
+    height: 67px;
+    font-family:  'Playfair Display SC', serif;
+    background-color: #FA7070;
+    border-radius: 5px;
+    color: #FBF2CF;
+ 
+}
+header p {
+    text-align: right;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: transparent;
+    font-weight: 700;
+    letter-spacing: 0.8em;
+    background-image: linear-gradient(180deg,
+    #ffd53f,
+    #F38181);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    font-size: 3.7em;
+    margin:-28px 10px;
+  
+ 
+}
+header p img{
+    filter: saturate(5);
+    width: 45px;
+    
+}
+header img{
+    width: 20px;
+    vertical-align:middle;
+    margin: 1% 1%;
+    filter: saturate(100);
+
+}
+span{
+    font-size: 1.5em;
+    color: #FA7070;
+}
+div.contenedor{
+    width: 700px;
+    height: 770px;
+     /*acordarme de esto al añadir botones*/
+    margin: 10px auto;
+    /* color:#95E1D3;
+    background-color: #FA7070; */
+    font-size: 8px;
+    border-radius: 20px ;
+    /* border: 5px solid#FA7070; */
+     overflow: hidden;  
+}
+
+main{
+    width: 700px;
+    height: 770px;
+     /*acordarme de esto al añadir botones*/
+    /* margin: 10px auto; */
+    background-color:#95E1D3;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #FA7070;
+    font-size: 8px;
+    border-radius: 20px ;
+    border: 5px solid#FA7070;
+    /* overflow: hidden; */  
+    
+}
+
+.display {
+    width: 95%;
+    height: 100px;
+    font-size: 2.7em;
+    font-weight: 500;
+    text-align: right;
+    margin-left: 2%;
+    border: transparent;
+    background-color: transparent;
+    outline: none;
+    color: #FA7070;
+}
+
+
+.botones {
+    width: 100%;   
+    margin-left: 10px;
+}
+.memoria button{
+ width: 16%;
+ height: 35px;
+}
+
+
+button {
+    font-size: 4em;
+    width: 24%;
+    height: 75px;
+    border: 1.5px solid rgb(224, 112, 112);
+    border-radius: 200px 200px 200px 200px;
+    margin: 2px 1px;
+    outline: none;
+    color:#FA7070;
+    background-color:#EAFFD0;
+    float: left;
+    transition:all 0.3s ease-in-out ;
+}
+
+button[data-operacion]{
+    font-size: 3em;
+    background-color: #FCE38A;
+    color: #F38181;
+}
+button[data-operacion=resolver] {
+    background-color: #F38181;
+    color:  #FCE38A;
+}
+
+button.digito:hover{
+    background-color: #FA7070;
+    color: #FCE38A;
+    font-size: 6em;
+}
+button[data-operacion=resolver]:hover{
+    color: #FA7070;
+    background-color:  #FCE38A;
+    font-size: 6em;
+}
+    
+button[data-operacion]:not(button[data-operacion=resolver]):not(button[data-operacion=borrarmemoria]):not(button[data-operacion=recuperarmemoria]):not(button[data-operacion=sumamemoria]):not(button[data-operacion=restamemoria]):not(button[data-operacion=almacenamemoria]):not(button[data-operacion=muestramemoria]):hover{
+    color:  #FCE38A;
+    background-color:#FA7070;
+    font-size: 6em;
+}
+div.memoria button[data-operacion]:hover{
+
+    color:  #FCE38A;
+    background-color:#FA7070;
+}
+div.memoria-detalle{
+    color: black;
+    background-color: #95e1d3c2;
+    
+    margin-top: 0;
+    width: 98%;
+    height: 558px;
+    margin: 10px auto;
+    position: relative;
+
+}
+
+.valor-MiMemoria{ /* Este es el valor del div que me crea al mostrar memoria en detalle  el tamaño de la cortinilla esta en js*/ 
+
+    color:#FA7070 ;
+    font-size: 3.5em;
+    text-align: right;
+    margin: 10px 10px;
+    padding: 6px;
+    
+}
+
+

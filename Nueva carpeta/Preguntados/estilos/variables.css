@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Playfair+Display+SC&family=Source+Sans+Pro&display=swap');
+:root{
+    --color-fondo-principal:#D2DAFF;
+    --color-fondo-panel:#EEF1FF;
+    --color-letraNav:#6e70f6;
+    --color-hoverNav:#D2DAFF;
+    --color-enfasis-fondo: white;
+    --color-checked:red;
+    --fuente-principal:'Source Sans Pro', sans-serif;
+    --color-encabezado:#D2DAFF;
+    --color-bordes:#6e70f6;
+    --color-navegador:#AAC4FF;
+    --fuente-h1:'Alegreya', serif;
+}

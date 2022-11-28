@@ -1,0 +1,9 @@
+main{
+    background-color: cadetblue;
+    color: white;
+    font-size: 3em;
+}
+li::marker{
+
+    content:"😊";
+}

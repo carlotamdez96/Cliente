@@ -1,0 +1,422 @@
+<!-- layout.nunjucks -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title data-localize="title">Trivia Crack 2</title>
+		<meta name="keywords" content="trivia, preguntados, triviacrack, fun, pursuit, app, quiz, quize, game, juego, trivias, peliculas, musica, futbol, pop, tv, comics, historia, diaria, amigos, social, cine, musica, preguntas, respuesta, free, gratis, verdadero, falso, duelo, quizzes, challenge, crown, corona, logos, banderas, online">
+		<meta name="description" content="Challenge your friends and family to a trivia competition, and prove how smart you are!" data-localize="description">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="../img/favicon/manifest.json">
+		<link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#3bb14a">
+		<link rel="shortcut icon" href="../img/favicon/favicon.ico">
+		<meta name="msapplication-config" content="../img/favicon/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<meta property="og:title" content="Trivia Crack 2" />
+		<meta property="og:type" content="game" />
+		<meta property="og:url" content="http://www.triviacrack2.com/" />
+		<meta property="og:image" content="http://www.triviacrack2.com/img/og-image.jpg" />
+		<link rel="stylesheet" href="../css/main.css">
+		<style media="screen">
+			#preloader,.status{position:absolute;top:0;right:0;bottom:0;left:0}#preloader{background-color:#2e2f30;z-index:2000;height:100%}.status{width:126px;height:148px;margin:auto;background-image:url(../img/loading.png);background-size:100%;-webkit-animation:play 1.5s infinite;-moz-animation:play 1.5s infinite;-ms-animation:play 1.5s infinite;-o-animation:play 1.5s infinite;animation:play 1.5s infinite}.overflow-h{overflow:hidden}@-webkit-keyframes play{0%,100%{transform:scale(1)}50%{transform:scale(.5)}}@keyframes play{0%,100%{transform:scale(1)}50%{transform:scale(.5)}}@keyframes bounce{20%,40%,60%,80%,from,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:scale3d(.3,.3,.3)}20%{transform:scale3d(1.1,1.1,1.1)}40%{transform:scale3d(.9,.9,.9)}60%{opacity:1;transform:scale3d(1.03,1.03,1.03)}80%{transform:scale3d(.97,.97,.97)}to{opacity:1;transform:scale3d(1,1,1)}}@keyframes fadeInUp{from{opacity:0;transform:translate3d(0,100%,0)}to{opacity:1;transform:translate3d(0,-15px,0)}}.fadeInUp{animation-name:fadeInUp}
+	 	</style>
+	</head>
+
+	<body id="top" class="overflow-h">
+		<!-- Start preloader -->
+		<div id="preloader">
+	    <div class="status"></div>
+	  </div>
+
+	  <!-- You write code for this content block in another file -->
+	  
+
+
+
+<!-- Adds the navigation partial -->
+<!-- navigation.nunjucks -->
+
+<div class="nav-container">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../img/logo-invert-es.png" alt="" class="navbar__logo">
+      </a>
+      <span class="navbar-text">
+        <a class="btn btn-primary pr-4 pl-4 navbar__support-btn" href="https://supportew.etermax.com/" role="button" target="_blank"><span class="font-weight-bold"> Soporte </span></a>
+      </span>
+    </div>
+  </nav>
+</div>
+
+
+
+
+
+  <main role="main" class="main">
+    <section class="header">
+      <div class="content">
+        <div class="container">
+          <img class="hero__character d-block mr-auto ml-auto d-lg-none" src="../img/charas.png" alt="Trivia Crack 2" data-aos="fade-down" data-aos-delay="50">
+          <img class="hero__character mr-auto ml-auto d-none d-lg-block" src="../img/charas-lg.png" alt="Trivia Crack 2" data-aos="fade-down" data-aos-delay="50">
+          <img class="main__logo" src="../img/logo-es.png" alt="Trivia Crack 2">
+          <div class="hero__content">
+            <p class="text-center hero__txt">El clásico juego de preguntas llega <br> renovado para que sigas disfrutando.</p>
+            <div class="stores">
+              <a href="https://app.appsflyer.com/id1424533120?pid=web&c=webpreguntados2" class="stores__store" target="_blank">
+               <img src="../img/storebadge-apple-es.svg" type="image/svg+xml">
+              </a>
+              <a href="https://app.appsflyer.com/com.etermax.trivia.preguntados2?pid=Web" class="stores__store" target="_blank">
+               <img src="../img/storebadge-google-es.svg" type="image/svg+xml">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenges">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-center text-uppercase heading-shadow">Anímate a nuevos desafíos</h2>
+          </div>
+        </div>
+        <div class="row challenges__container">
+          <div class="col-md mb-5" data-aos="fade-up">
+            <div class="challenges__icon d-block m-auto" data-aos="fade-up">
+              <img src="../img/challenges-icon-1.png" alt="">
+            </div>
+            <h3 class="text-center mt-3">Colecciona personajes</h3>
+            <p class="text-center d-block m-auto challenges__txt">Consíguelos a todos y completa las colecciones.</p>
+          </div>
+          <div class="col-md mb-5" data-aos="fade-up">
+            <div class="challenges__icon d-block m-auto">
+              <img src="../img/challenges-icon-2.png" alt="">
+            </div>
+            <h3 class="text-center mt-3">Crea tu propio Equipo</h3>
+            <p class="text-center  d-block m-auto challenges__txt">Juega e intercambia vidas con tus amigos.</p>
+          </div>
+          <div class="col-md" data-aos="fade-up">
+            <div class="challenges__icon d-block m-auto">
+              <img src="../img/challenges-icon-3.png" alt="">
+            </div>
+            <h3 class="text-center mt-3">Alcanza nuevos niveles</h3>
+            <p class="text-center d-block m-auto challenges__txt">Avanza por cientos de emocionantes niveles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="modes pt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-center text-uppercase heading-shadow modes__heading-h2">Emocionantes modos de juego</h2>
+          </div>
+        </div>
+      </div>
+      <div class="charas">
+        <div class="charas__tina" data-aos="slide-right" data-aos-delay="300">
+          <img src="../img/chara-tina.png" alt="">
+        </div>
+        <div class="charas__tito" data-aos="slide-left" data-aos-delay="300">
+          <img src="../img/chara-tito.png" alt="">
+        </div>
+      </div>
+      <div class="modes__castle pt-5 pb-5 position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="modes__slide d-block m-auto">
+              <div class="slide__item">
+                <h3 class="text-center mt-2 mb-2 modes__heading">Duelo de Torres</h3>
+                <div class="slide__txt-container">
+                  <div class="shine">
+                  </div>
+                  <p class="text-center d-block m-auto slide__item-txt">Diseña tu estrategia y vence a tu oponente categoría por categoría.</p>
+                </div>
+              </div>
+              <div class="slide__item">
+                <h3 class="text-center mt-2 mb-2 modes__heading">Desafío diario</h3>
+                <div class="slide__txt-container">
+                  <div class="shine">
+                  </div>
+                  <p class="text-center d-block m-auto slide__item-txt">Logra rachas de respuestas correctas y supérate a ti mismo.</p>
+                </div>
+              </div>
+              <div class="slide__item">
+                <h3 class="text-center mt-2 mb-2 modes__heading">Modo clásico</h3>
+                <div class="slide__txt-container">
+                  <div class="shine">
+                  </div>
+                  <p class="text-center d-block m-auto slide__item-txt">Juega 1 contra 1, obtén los seis personajes y alcanza la victoria.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg team__content">
+            <h2 class="text-center text-uppercase heading-shadow">Únete a un equipo o crea el tuyo</h2>
+            <p class="text-center mb-0">Juega y chatea con tus amigos, intercambia vidas con ellos y recibe lingotes de oro gratis.</p>
+          </div>
+          <div class="col-lg">
+            <img src="../img/chara-willy.png" alt="Willy" class="team__chara d-block mr-auto ml-auto" data-aos="zoom-in">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="crown">
+      <img src="../img/charas-levelup.jpg" alt="" class="w-100 d-md-none">
+      <img src="../img/charas-levelup-lg.jpg" alt="" class="d-none d-md-block w-100">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-center text-uppercase heading-shadow">¡Que nada te detenga!</h2>
+          </div>
+        </div>
+        <div class="row crown__content">
+          <div class="col crown-txt__container">
+            <p class="crown__txt">Responde preguntas, gana coronas y sube de nivel. ¡El cielo es el límite!</p>
+            <img src="../img/level-bar.png" alt="" class="d-block crown__levelupbar">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="discover">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg discover__content">
+            <h2 class="text-uppercase heading-shadow discover__heading">Descubre la experiencia</h2>
+            <p class="discover__txt">Siempre hay algo nuevo para aprender</p>
+            <img class="discover__chara d-none d-lg-block" src=../img/chara-willy-stand.png alt="Willy">
+          </div>
+          <div class="col-lg discover__slide__content">
+            <div class="discover__slide d-block m-auto">
+              <div>
+                <img src="../img/phone_screens_es_01.png" alt="Screenshot" class="d-block mr-auto ml-auto mt-2">
+              </div>
+              <div>
+                <img src="../img/phone_screens_es_02.png" alt="Screenshot" class="d-block mr-auto ml-auto mt-2">
+              </div>
+              <div>
+                <img src="../img/phone_screens_es_03.png" alt="Screenshot" class="d-block mr-auto ml-auto mt-2">
+              </div>
+              <div>
+                <img src="../img/phone_screens_es_04.png" alt="Screenshot" class="d-block mr-auto ml-auto mt-2">
+              </div>
+              <div>
+                <img src="../img/phone_screens_es_05.png" alt="Screenshot" class="d-block mr-auto ml-auto mt-2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="support">
+      <div class="container">
+        <div class="row">
+          <div class="col-md support__content">
+            <h2 class="text-center text-uppercase text-dark support__heading">¿Dudas? ¿Consultas?</h2>
+            <p class="text-center text-dark">¡Ponte en contacto!</p>
+            <p class="text-center"><a class="btn btn-info support__button" href="https://supportew.etermax.com/" role="button" target="_blank">Soporte</a></p>
+          </div>
+
+          <div class="col-md">
+            <img class="support__chara d-none d-md-block m-auto" src=../img/chara-pop.png alt="Pop">
+          </div>
+
+        </div>
+           </div>
+    </section>
+ </main>
+
+
+
+
+<!-- Adds the navigation partial -->
+<!-- footer.nunjucks -->
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="footer__etermax clearfix col-md-3">
+        <svg class="svg-logo" width="130" height="30">
+          <use xlink:href="../img/sprite-logos.svg#etermax-logo"></use>
+        </svg>
+      </div>
+
+      <div class="clearfix col-md-9">
+        <nav class="contact">
+          <div class="stores">
+            <a href="https://app.appsflyer.com/id1424533120?pid=web&c=webpreguntados2" class="stores__store" target="_blank">
+             <img src="../img/storebadge-apple-es.svg" type="image/svg+xml">
+            </a>
+            <a href="https://app.appsflyer.com/com.etermax.trivia.preguntados2?pid=Web" class="stores__store" target="_blank">
+             <img src="../img/storebadge-google-es.svg" type="image/svg+xml">
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <hr class="footer__hr">
+
+    <div class="row">
+      <div class="clearfix col-md-12">
+        <nav class="footer__social">
+          <ul>
+            <li>
+              <a class="social__icon" href="https://www.facebook.com/TriviaCrack" target="_blank" data-localize="facebook-url">
+                <svg x="0px" y="0px" viewBox="0 0 56.693 56.693" class="icon icon-1">
+                  <use xlink:href="../img/sprite-logos.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="social__icon" href="https://twitter.com/triviacrack" target="_blank" data-localize="twitter-url">
+                <svg x="0px" y="0px" viewBox="0 0 56.693 56.693">
+                  <use xlink:href="../img/sprite-logos.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="social__icon" href="https://www.instagram.com/triviacrack" target="_blank" data-localize="instagram-url">
+                <svg x="0px" y="0px" viewBox="0 0 56.693 56.693">
+                  <use xlink:href="../img/sprite-logos.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="social__icon" href="https://www.youtube.com/channel/UC-TLaR04Abrd7jIoN9k0Fzw/" target="_blank" data-localize="youtube-url">
+                <svg x="0px" y="0px" viewBox="0 0 56.693 56.693">
+                  <use xlink:href="../img/sprite-logos.svg#icon-youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <div class="footer__copyright">
+  <div class="container">
+    <div class="row">
+      <div class="clearfix col-md-12">
+        <ul>
+          <li><small><a href="http://www.etermax.com/terms">Condiciones de Servicio</a></small></li>
+          <li>|</li>
+          <li><small><a href="http://etermax.com/privacy/">Política de Privacidad</a></small></li>
+          <li>|</li>
+          <li><small> ©2018 Etermax. Todos los derechos reservados. </small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119761030-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'Your-Analytics-ID');
+		</script>
+		<script src="../js/jquery-1.11.3.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		
+		<script src="../js/slick.min.js"></script>
+		<script src="../js/headroom.min.js"></script>
+		 <script src="../js/aos.js"></script>
+		<script type="text/javascript">
+			$(window).on('load', function() {
+				$('.status').fadeOut();
+				$('#preloader').fadeOut('slow');
+				$('body').css({
+					'overflow': 'visible'
+				});
+				$( ".countdown__character" ).addClass( "animate" );
+			})
+
+			$('.modes__slide').slick({
+			  infinite: true,
+			  slidesToShow: 3,
+			 	arrow: false,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+							slidesToShow: 2,
+							arrow: true
+						}
+					},
+					{
+						breakpoint: 640,
+						settings: {
+							slidesToShow: 1,
+							arrow: true
+						}
+					}
+				]
+			});
+
+
+			$('.discover__slide').slick({
+				infinite: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				fade: true,
+				autoplay: true,
+				speed: 500,
+				responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        fade: false,
+			      }
+			    }
+			  ]
+			});
+
+			AOS.init();
+
+			// headroom
+
+			// grab an element
+			var myElement = document.querySelector(".nav-container");
+			// construct an instance of Headroom, passing the element
+			var headroom = new Headroom(myElement, {
+			  "offset": 0,
+			  "tolerance": 5,
+			  "classes": {
+			    "initial": "headroom",
+			    "pinned": "headroom--pinned",
+			    "unpinned": "headroom--unpinned"
+			  }
+			});
+			// initialise
+			headroom.init();
+		</script>
+	</body>
+</html>

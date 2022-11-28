@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2? family=Lato&display=swap" rel="stylesheet">
+    <title>Viajar a Oporto</title>
+    <link rel="stylesheet" href="./estilos/estilosCompleto.css">
+    <script>
+        window.onload = function(){
+            const videos = document.querySelectorAll(".cambiar");
+             const reproductor = document.querySelector(".principal");
+             const botones = document.querySelectorAll("button");
+             const summary = document.querySelector("summary");
+
+        for (let boton of botones) {
+            boton.addEventListener("click",cambia);  
+            function cambia(){
+               let video= boton.previousElementSibling;
+               let direccion = video.getAttribute("src");
+               let direccionReproductor = reproductor.getAttribute("src");
+               reproductor.setAttribute("src",direccion);
+               summary.style.display="none";
+               video.setAttribute("src",direccionReproductor);
+            }  
+                
+        }
+       
+        }    
+
+    </script>
+</head>
+<body>
+    <header>
+            <p><span>Diario</span> de mi viaje a Oporto</p>
+            <img src="./images/oporto.jpg" alt="edificios de colores en Oporto">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Descubre</a></li>
+            <li><a href="">Fotos</a></li>
+            <li><a href="">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="contenedor">
+        <div class="contVideo">
+            <video class="principal" src="./videos/C465B9B0-CB4F-40F3-818E-43F905404DBF.mov" controls></video>
+            <!-- Detalles del Video-->
+            <details>
+                <!-- Ttiulo de la etiqueta details-->
+                <summary> Iglesia de San Ildefonso</summary>
+                <p>
+                    La iglesia de San Ildefonso (en portugués, Igreja de Santo Ildefonso) es un edificio religioso en Oporto (Praça da Batalha), Portugal, su construcción se inició en 1709 y terminó en 1730 (inicialmente sin campanarios), posteriormente en 1739 fueron construidos los dos campanarios.
+                </p>
+            </details>
+            <h4>Galeria</h4>
+            <video class="cambiar" src="./videos/E36C1011-8BA3-4991-8DAD-5320DCB15522.mov"controls ></video>
+            <button >Reproducir</button>
+            <video class="cambiar" src="./videos/IMG_8593.mp4" controls > </video>
+            <button >Reproducir</button>
+            <video class="cambiar" src="./videos/IMG_8284.mp4" controls ></video>
+            <button >Reproducir</button>
+          
+            
+        </div>
+    
+        <section>     
+            <article>
+                
+                    <h4>El primer día</h4>
+                    <img src="./images/IMG_8360.JPEG" alt="imagen del puente Luis en Oporto">
+                
+                        <p>Una de las cosas que más me gustan de Oporto, son sus maravillosas vistas.Nada más llegar, acudí al mismo sitio donde vi Oporto por primera vez hace muchos años atras. Y desde ahi contemplé el puente más famoso de Oporto, el puente Don Luis I.
+                        Oporto tiene mucho encanto, ya que todas sus calles son de adoquines y sus edificios son muy antigüos. Una de las cosas que más me gusta de esta pintoresta ciudad es la tranquilidad que transmite. Esto puede resultar extraño ya que suele estar muy frecuentada por turistas, pero a mi me transmite mucha calma.
+                        
+                        </p>
+               
+             
+            </article>
+            <article>
+     
+                    <h4>El segundo día</h4>
+                    <img src="./images/playa.JPEG" alt="imagen playa">
+                    
+                        <p>Esta es una de las zonas más bonitas de los alrededores de Oporto, se encuentra en Aveiro y se llama Costa Nova de Aveiro. En esta zona tan pintoresca, se encuentran las casas mas fotografiadas en verano de Instagram.
+                        Personalmente una de las cosas que más me gusta de esta zona, es su playa infinita. Sin duda la playa más larga y bonita que he visto. Entre las calles y la playa habia unas dunas muy bonitas, que además la playa contaba con una pasarela con la que podias recorrer la playa de lado a lado.
+                        </p>
+                    
+         
+            </article>
+            <article>
+           
+                    <h4>El tercer día</h4>
+                    <img src="./images/estadio.JPEG" alt="Estadio de Oporto">
+             
+                        <p>Este día lo dedicamos a algo diferente ,fuimos al estadio de Oporto, Estadio do Dragão a ver el partido de Champions que jugaba el Oporto contra el Atletico de Madrid.Lo cierto es que no me gusta mucho el futbol, pero me gustó la experiencia porque nunca había estado en un estadio tan grande y con tanta gente.Al terminar dimos una vuelta por los alrededores para conocer la zona y ver el campo por fuera.</p>
+                  
+           
+            </article>
+            <article>
+        
+                    <h4>El útlimo día</h4>
+                    <img src="./images/mercado.JPEG" alt="mercado">
+               
+                        <p>Conozco Oporto desde hace años y es por eso que me gusta recorrerlo con tranquilidad ya que conozco la mayoria de los sitios turisticos. El útimo día lo dedicamos a perdernos por sus calles a ver que es lo que encontramos. Y encontramos un sitio muy turisitico en el que nunca había estado.Es un mercado muy conocido por la zona, y tras el paso de los años se ha hecho muy famoso. Tiene gran variedad de productos típicos de la zona, quesos, carne, latas de sardinas, embutidos,encurtidos, frutas.. 
+                    
+                        </p>
+           
+            </article>
+         
+        </section>
+
+    </div>
+    
+</body>
+</html>

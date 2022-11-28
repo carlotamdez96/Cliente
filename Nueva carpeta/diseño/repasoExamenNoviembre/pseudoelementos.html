@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            margin: 0 auto;
+            background-color: rgb(241, 229, 153);
+            width: 500px;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;   
+        }
+        .contenedor div:only-child{
+            background-color: red;
+            width: 100px;
+            height: 120px;
+            position: relative;
+            
+        }
+        .contenedor::after{
+            position: absolute;
+            content: "";
+            display: block;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid rgb(241, 229, 153);
+            border-right: 50px solid transparent;
+            border-left: 50px solid transparent;
+            /* bottom: 547px; */
+            bottom: 342px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cuadrado"></div>
+    </div>
+    
+</body>
+</html>

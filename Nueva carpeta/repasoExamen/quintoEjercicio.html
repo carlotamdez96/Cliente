@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinto Ejercicio</title>
+    <style>
+        button{
+           margin-left: 300px;
+        }
+    </style>
+    <script>
+        var presionado = false;
+        window.onload = function(){
+            //referencias
+            const misBotones = document.querySelectorAll("button");
+            const valorAñadido = document.querySelector("div");
+
+            //manejadores de eventos
+
+            for (const iterator of misBotones) {
+                iterator.addEventListener("click",miFuncion);
+            }
+            function miFuncion(){
+                
+                switch(this.textContent){
+
+                    case "Pincha 1":
+                    let seccion = document.querySelector("section");
+                    if(presionado){
+                        seccion.style.backgroundColor="white";
+                        seccion.style.fontSize="1em";
+                        presionado = false;
+                    }else{
+                        seccion.style.backgroundColor = "red";
+                        seccion.style.fontSize = "2em";
+                        presionado = true;
+                    }
+                    
+                    break;
+
+                    case "Pincha 2":
+                        if(presionado){
+                            valorAñadido.innerHTML="";
+                            presionado=false;
+                        }else{
+                            valorAñadido.innerHTML=`<h2> Hola!!!! </h2>`;
+                            presionado = true;
+                        }
+                       
+                    break;
+
+                    case "Pincha 3":
+                        for (const iterator of misBotones) {
+                            iterator.style.fontSize = "3em";
+                            iterator.backgroundColor = "blue";
+                        }
+                    break;
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <section>
+        <button>Pincha 1</button>
+        <button>Pincha 2</button>
+        <button>Pincha 3</button>
+    </section>
+    <div></div>
+    
+</body>
+</html>

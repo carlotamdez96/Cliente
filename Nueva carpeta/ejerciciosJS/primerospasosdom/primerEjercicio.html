@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimerEjercicio</title>
+    
+</head>
+<body>
+    <head>
+        <h1>Esta es la primera prueba</h1>
+    </head>
+    <main>
+        <ul>
+            <li>Primero escribo varios elementos</li>
+            <li>Despues en el script referencio algunos para acceder a sus hijos, hermanos o padres</li>
+            <li>Quiero tambien crear un link, a una hoja de estilos nueva</li>
+            <li>Estas hojas de estilo cambiaran algunos colores</li>
+        </ul>
+        <p>De momento esto es todo</p>
+    </main>
+    <button>Pulsa</button>
+</body>
+<script>
+    var seleccionado = false;
+    window.onload = function(){
+        let miBoton = document.querySelector("button").addEventListener("click",miFuncion);
+        let elemain = document.querySelector("main");
+
+        function miFuncion(){
+            if(seleccionado){
+                let nuevaHoja = document.createElement("link");
+                nuevaHoja.rel="stylesheet";
+                nuevaHoja.href="./estilosPrimeros.css";
+                let head= document.head;
+                head.appendChild(nuevaHoja);
+                seleccionado = false;
+            }else{
+
+                let lista = elemain.children;
+                /* Devuelve una lista de nodos */
+                let nuevoLi = document.createElement("li");
+                nuevoLi.textContent="Saludos este elemento es nuevo";
+                lista[0].appendChild(nuevoLi);
+                seleccionado=true;
+            }
+            
+        }
+        
+    }
+</script>
+</html>

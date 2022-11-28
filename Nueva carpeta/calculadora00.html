@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora00</title>
+
+    <script>
+        window.onload = function() {
+
+            // var frutas = ["pera", "manzana", "melón"];
+
+            // for (let indice = 0; indice < frutas.length; indice++) {
+            //     console.log(frutas[indice]);
+            // };
+
+            // frutas.forEach(function(fruta) {
+            //     console.log(fruta);
+            // })
+
+            // for (let fruta in frutas) {
+            //     console.log(frutas[fruta]);
+            // }
+
+            // for (let fruta of frutas) {
+            //     console.log(fruta);
+            // }
+
+
+
+
+
+            const display = document.querySelector("input");
+            const digitos = document.querySelectorAll("button");
+
+            for (let digito of digitos) {
+                console.log(digito);
+                digito.addEventListener("click", procesaDigito);
+
+            }
+
+
+            // digitos[0].addEventListener("click", procesaB1)
+            // digitos[1].addEventListener("click", procesaB2)
+            // digitos[2].addEventListener("click", procesaB3)
+
+            function procesaDigito() {
+                display.value = (display.value == "0") ? display.value = this.textContent : display.value = display.value + this.textContent;
+            }
+
+            // function procesaB1() {
+            //     display.value = (display.value == "0") ? display.value = this.textContent : display.value = display.value + this.textContent;
+            // }
+
+            // function procesaB2() {
+            //     display.value = (display.value == "0") ? display.value = this.textContent : display.value = display.value + this.textContent;
+            // }
+
+            // function procesaB3() {
+            //     display.value = (display.value == "0") ? display.value = this.textContent : display.value = display.value + this.textContent;
+            // }
+
+            let x;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" value="0">
+    <br><br>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+</body>
+
+</html>
