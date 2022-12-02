@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú responsivo</title>
+    <script src="https://kit.fontawesome.com/a627cec02c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <!-- Contenedor para menú-->
+    <nav class="menu">
+        <img src="./imagenes/gijon-logo.png">
+        <label for="muestra-menu">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <input type="checkbox" id="muestra-menu">
+        <ul>
+            <li>
+                <a href="#">Iniciar sesión</a>
+            </li>
+            <li>
+                <a href="#">Ver multimedia</a>
+            </li>
+            <li>
+                <a href="#">Reservar</a>
+            </li>
+            <li>
+                <a href="#">Canjear</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        // window.onload = function() {
+        //     var openMenu = document.querySelector("#open-menu");
+        //     var closeMenu = document.querySelector("#close-menu");
+        //     var menu = document.querySelector(".menu ul");
+
+        //     openMenu.addEventListener("click", menuON);
+        //     closeMenu.addEventListener("click", menuOFF);
+
+        //     function menuON() {
+        //         // menu.style.display = "flex";
+        //         menu.style.transition = "transform .5s ease";
+        //         menu.style.transform = "translateY(0)";
+        //         openMenu.style.display = "none";
+        //         closeMenu.style.display = "block";
+        //     }
+
+        //     function menuOFF() {
+        //         menu.style.transform = "translateY(-260px)";
+        //         closeMenu.style.display = "none";
+        //         openMenu.style.display = "block";
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
