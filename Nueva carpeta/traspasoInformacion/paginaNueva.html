@@ -26,16 +26,13 @@
             // localStorage.clear();
                     if((localStorage.nombre !=undefined) && (localStorage.password != undefined)){
                         // document.querySelector("h1").innerHTML=`Hola  ${localStorage.nombre}  <br>  me se tu contraseña: ${localStorage.password}`;
-
                         var texto = `Hola ${localStorage.nombre},    me se tu contraseña: ${localStorage.password}`;
-                        
                         escribirEnPantalla(texto);
                         
                     }else{
                         // document.querySelector("h1").innerHTML= "No has introducido tus datos";
                         var mensaje ="No has introducido tus datos";
-                        escribirEnPantalla(mensaje);
-                        
+                        escribirEnPantalla(mensaje);              
                     }
                     function escribirEnPantalla(texto){
                         let arr=texto.split("");
@@ -55,7 +52,7 @@
                             }
                             }
                         },100); 
-}
+                        }
                 }
         
     </script>
