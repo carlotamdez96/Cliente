@@ -1,0 +1,9 @@
+@import url(../css/reset.css);
+
+/*min width para que no disminuya mas dfe 400 y tamaño 100vh para que el video ocupe todo lo que se ve*/
+header {
+  height: 100px;
+  background-color: brown;
+}
+
+.container {}

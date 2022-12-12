@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            box-sizing: border-box;
+            /* border: 0; */
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .contenedor{
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            background-color: rgb(66, 173, 255);
+            padding: 50px;
+            border: 2px solid rgb(63, 63, 253);
+        }
+        label,p{
+            font-size: 1.3em;
+            color: white;
+            text-shadow: 0.1em 0.1em 0.2em black;
+            text-align: center;
+        }
+        button{
+            background-color: rgb(101, 101, 255);
+            color: white;
+            font-size: 1.1em;
+            padding: 2px;
+            cursor: pointer;
+
+        }
+        button:hover{
+            background-color: white;
+            color: rgb(99, 99, 255);
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            const botones = document.querySelectorAll("button");
+
+        
+                botones[0].addEventListener("click",guardar);
+                botones[1].addEventListener("click",mostrar);
+          
+                function guardar(){
+                    
+                    localStorage.nombre = document.getElementById("nombre").value;
+                    localStorage.password = document.getElementById("password").value;
+                    let miStorage = window.localStorage;
+                    console.log(miStorage);
+                }
+                function mostrar(){
+                    window.location.href="paginaNueva.html";
+                }
+                
+
+        }
+    </script>
+</head>
+
+<body>
+<div class="contenedor">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre"/>
+    
+    <label for="nombre">Password:</label>
+    <input type="text" id="password"/>
+    <button>Guardar datos</button>
+    <p> Pulsa aquí para ver tu usuario y contraseña</p>
+    <button>Recuperar datos</button>
+
+</div>
+
+</body>
+</html>
