@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var activado=false;
+            var palabra="";
+            document.addEventListener("keydown",function(event){
+                var teclaPresionada = event.key;
+                console.log(teclaPresionada);
+                var array=[];
+                
+               
+                var display = document.querySelector("input");
+                if(teclaPresionada=="."){
+                    event.preventDefault();
+                    display.value+="C";
+                    palabra+="c";
+                    activado=true;
+                    // array.push
+                }
+                if(activado && teclaPresionada!="."){
+                    event.preventDefault();
+                    switch(palabra){
+                      
+                        case palabra.charAt(1) :
+                            display.value="a";
+                            palabra+="a";
+                            break;
+                        case palabra.charAt(1): 
+                            display.value="r";
+                            palabra+="r";
+                            break;
+                    }
+                    
+                }
+                if(!activado){
+                    display.value+=teclaPresionada;
+                    palabra+=teclaPresionada;
+                }
+               
+                
+            })
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>
