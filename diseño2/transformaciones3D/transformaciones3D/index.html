@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .flip3D {
+            width: 240px;
+            height: 200px;
+            margin: 10px;
+            float: left;
+            /* transform-style: preserve-3d; */
+            position: relative;
+        }
+
+        .flip3D .front {
+            position: absolute;
+            transform: perspective(600px) rotateY(0deg);
+            background: #FC0;
+            width: 240px;
+            height: 200px;
+            border-radius: 7px;
+            backface-visibility: hidden;
+            transition: transform .5s linear 0s;
+        }
+
+        .flip3D .back {
+            position: absolute;
+            transform: perspective(600px) rotateY(180deg);
+            background: #80BFFF;
+            width: 240px;
+            height: 200px;
+            border-radius: 7px;
+            backface-visibility: hidden;
+            transition: transform .5s linear 0s;
+        }
+
+        /* Selectores para efecto copn hover desde CSS */
+        .flip3D:hover .front {
+            transform: perspective(600px) rotateY(-180deg);
+        }
+
+        .flip3D:hover .back {
+            transform: perspective(600px) rotateY(0deg);
+        }
+
+        /* Clases para aplicar desde JavaScript */
+        /* .flip3D .girafront {
+            transform: perspective(600px) rotateY(-180deg);
+        }
+
+        .flip3D .giraback {
+            transform: perspective(600px) rotateY(0deg);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="flip3D">
+        <div class="back">Box 1 - Back</div>
+        <div class="front">Box 1 - Front</div>
+    </div>
+    <div class="flip3D">
+        <div class="back">Box 2 - Back</div>
+        <div class="front">Box 2 - Front</div>
+    </div>
+    <div class="flip3D">
+        <div class="back">Box 3 - Back</div>
+        <div class="front">Box 3 - Front</div>
+    </div>
+
+    <script>
+
+        let contenedorFichas = document.querySelectorAll(".flip3D");
+        console.log(contenedorFichas)
+
+        for (let ficha of contenedorFichas) {
+            ficha.children[0].addEventListener("click", function () {
+                rotarFicha(this);
+            });
+            ficha.children[1].addEventListener("click", function () {
+                rotarFicha(this);
+            });
+        }
+
+        function rotarFicha(ficha) {
+
+            //Hay que prestar atención al orden de las fichas front y back en el flujo HTML
+
+            ficha.parentNode.children[0].classList.toggle("giraback");
+            ficha.parentNode.children[1].classList.toggle("girafront");
+        }
+    </script>
+</body>
+
+</html>

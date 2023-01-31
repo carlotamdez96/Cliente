@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url('imagenes/la-laboral.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .contenido {
+            width: 780px;
+            margin: 0 auto;
+        }
+        
+        .front img {
+            width: 240px;
+            height: 330px;
+            margin: 5px 0 0 15px;
+            float: left;
+            border-radius: 7px;
+            box-shadow: 7px 7px 5px 0 rgb(123, 134, 134);
+        }
+        
+        .back figure {
+            width: 150px;
+            float: left;
+            margin: 20px 25px 15px 40px;
+        }
+        
+        .back figure img {
+            width: 150px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 5px 0 rgba(243, 239, 239, 0.50);
+        }
+        
+        .back figcaption {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.2em;
+            color: white;
+            text-align: center;
+            border-bottom: 1px dotted white;
+        }
+        
+        h3 {
+            box-shadow: -4px -3px 10px 0 rgba(243, 239, 239, 0.50);
+            margin: 20px 10px 0 10px;
+            color: #ff8c00;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        
+        .front h5 {
+            font-size: 1.1em;
+            border-bottom: 1px dotted white;
+        }
+        
+        .info {
+            width: 380px;
+            margin-top: 40px;
+            margin-right: 15px;
+            padding: 0 5px;
+            float: right;
+            background: rgba(68, 35, 89, 0.83);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: -7px 7px 10px 0 rgba(50, 50, 50, 0.5);
+        }
+        
+        video {
+            width: 550px;
+            margin: 20px 20px 0 60px;
+            border: 1px solid white;
+            border-radius: 12px;
+            box-shadow: 7px 7px 10px 0 rgba(243, 239, 239, 0.50);
+        }
+        
+        .flip3D {
+            width: 680px;
+            height: 350px;
+            margin: 30px;
+            float: left;
+        }
+        
+        .flip3D>.front {
+            background: rgba(19, 19, 19, 0.6);
+            border: 1px solid rgb(220, 211, 211);
+            position: absolute;
+            transform: perspective( 1200px) rotateY( 0deg);
+            width: 680px;
+            height: 350px;
+            border-radius: 7px;
+            backface-visibility: hidden;
+            transition: transform .5s linear 0s;
+            border-radius: 7px;
+        }
+        
+        .flip3D>.back {
+            background: rgba(19, 19, 19, 0.6);
+            border: 1px solid rgb(220, 211, 211);
+            position: absolute;
+            transform: perspective( 1200px) rotateY( 180deg);
+            width: 680px;
+            height: 350px;
+            border-radius: 7px;
+            backface-visibility: hidden;
+            transition: transform .5s linear 0s;
+            border-radius: 7px;
+        }
+        
+        .flip3D:hover>.front {
+            transform: perspective( 1600px) rotateY( -180deg);
+        }
+        
+        .flip3D:hover>.back {
+            transform: perspective( 1600px) rotateY( 0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenido">
+        <div class="flip3D">
+            <div class="back">
+                <h3>Protagonistas</h3>
+                <figure>
+                    <img src="imagenes/RobertDowneyJr.jpg" />
+                    <figcaption>Robert Downey Jr.</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagenes/JudeLaw.jpg" />
+                    <figcaption>Jude Law</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagenes/NoomiRapace.jpg" />
+                    <figcaption>Noomi Rapace</figcaption>
+                </figure>
+            </div>
+            <div class="front">
+                <img src="imagenes/sherlockholmesjuegodesombras.jpg" />
+                <div class="info">
+                    <h3>Sherlock Holmes: Juego de sombras</h3>
+                    <div class="">
+                        <h5>Sinopsis</h5>
+
+                        <p>Sherlock Holmes se enfrenta ahora a su mayor desafio: El profesor Moriarty, una truculenta mente criminal que rivaliza con la genialidad del detective inglés, pero cuya capacidad para el mal y su absoluta falta de escrupulos supone
+                            una amenaza para todo el Viejo Continente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flip3D">
+            <div class="back">
+                <video controls>
+                    <source src="videos/BladeRunner.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="front">
+                <img src="imagenes/bladerunner.jpg" />
+                <div class="info">
+                    <h3>Blade Runner</h3>
+                    <div class="">
+                        <h5>Sinopsis</h5>
+
+                        <p>A principios del siglo XXI se creó un robot llamado Nexus 6. Era virtualmente idéntico al hombre pero superior a él en fuerza y agilidad. Se le dió el nombre de Replicante. Cuando los Replicantes fueron desterrados de la Tierra,
+                            brigadas especiales de policía, los Blade Runners, tenían órdenes de matar a todos los que no hubieran acatado la condena.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

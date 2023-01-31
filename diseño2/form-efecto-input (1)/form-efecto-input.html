@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <style>
+        .contenedor {
+            background-color: #FFF;
+            width: 80%;
+            max-width: 750px;
+            min-width: 550px;
+            margin: 90px auto;
+            box-shadow: 0 3px 5px rgb(56, 56, 56);
+            padding: 20px;
+        }
+        
+        .grupo-entrada {
+            position: relative;
+            margin: 40px 20px 0 20px;
+            width: 80%;
+        }
+        
+        .grupo-entrada input[type="text"] {
+            font-size: 14px;
+            color: #000;
+            width: 100%;
+            outline: none;
+            padding: 20px;
+            background-color: transparent;
+            border: 1px solid #3e3e3e;
+            border-radius: 5px;
+            padding-left: 40px;
+            width: 100%;
+        }
+        
+        .grupo-entrada label,
+        .grupo-entrada .fas {
+            color: rgb(192, 189, 189);
+            position: absolute;
+        }
+        
+        label {
+            top: 20px;
+            left: 30px;
+            transition: top .9s ease;
+        }
+        
+        .grupo-entrada .fas {
+            top: 20px;
+            left: 8px;
+        }
+        .grupo-entrada input:focus+label {
+            color: white;
+            background-color: black;
+            border-radius: 3px;
+            padding: 2px;
+            position: absolute;
+            top: -28px;
+        }
+        
+        .foco {
+            color: white;
+            background-color: black;
+            border-radius: 50px;
+            padding: 2px;
+            top: -28px;
+        }
+    </style>
+    <script>
+        // window.onload = function() {
+        //     const input = document.querySelector("input");
+
+        //     input.addEventListener("focus", obtenFoco);
+        //     input.addEventListener("blur", pierdeFoco);
+
+        //     function obtenFoco() {
+        //         this.nextElementSibling.classList.add("foco");
+        //     }
+
+        //     function pierdeFoco() {
+        //         if (!this.value) {
+        //             this.nextElementSibling.classList.remove("foco");
+        //         }
+        //     }
+        // }
+    </script>
+</head>
+
+<body>
+    <section class="contenedor">
+        <div class="form">
+            <div class="title-box">
+                <h3>
+                    Escribe el <strong>mensaje</strong>
+                </h3>
+            </div>
+            <form class="formulario" name="contacto" action="" method="post">
+
+                <div class="grupo-entrada">
+                    <input type="text" name="nombre" id="nombre" required data-error="Por favor introduzca su nombre">
+                    <label for="nombre" id="lnombre" class="label">Tu nombre*</label>
+                    <i class="fas fa-user"></i>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
