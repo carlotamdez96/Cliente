@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Submenus</title>
+    <link href="./reset.css" rel="stylesheet">
+    <style>
+        .menu{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        .menu__elemento{
+            position: relative;
+            display: flex;
+            flex-grow: 1;  
+            cursor: pointer;
+
+           
+        }
+       
+        .elemento__lista{
+            position: absolute;
+            opacity: 0;
+            transition: opacity .3s ease;
+            z-index: 0;
+            top: 20px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        
+        }
+        .menu__elemento:hover ul{
+            opacity: 1;
+            z-index: 1;
+           
+        }
+        .menu__elemento:hover{
+            background-color: black;
+            color: white;
+        }
+        .lista__subelemento:hover{
+            background-color: white;
+            color: black;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="menu__elemento"><a href="">Item1</a></li>
+        <li class="menu__elemento"><a href="">Item2</a>
+            <ul class="elemento__lista">
+                <li class="lista__subelemento"><a href="">SubItem1</a></li>
+                <li class="lista__subelemento"><a href="">SubItem2</a></li>
+            </ul>
+        </li>
+        <li class="menu__elemento"><a href="">Item3</a></li>
+        <li class="menu__elemento"><a href="">Item4</a>
+            <ul class="elemento__lista">
+                <li class="lista__subelemento"><a href="">SubItem1</a></li>
+                <li class="lista__subelemento"><a href="">SubItem2</a></li>
+            </ul>
+        </li>
+    </ul>
+    <p class="cuerpo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et debitis, repellat quis doloribus dolore necessitatibus minus repudiandae adipisci ducimus mollitia magnam libero, veritatis excepturi possimus voluptatem neque fugit reprehenderit vel!
+        Veniam quibusdam nihil in doloribus dicta qui repudiandae fugiat a nemo. Dicta rerum maxime sequi maiores totam voluptatum pariatur ipsa ut nobis quasi nesciunt suscipit obcaecati libero, aliquid, eius ipsam.
+        Esse, fugit ipsum, magnam aliquam quasi a delectus perspiciatis repudiandae eligendi excepturi, sint hic rerum? Earum quaerat libero officia dolorem quisquam nulla aperiam possimus eum cupiditate! Dolor placeat eum cum.
+        Laboriosam possimus dignissimos unde fugiat repellat laborum perferendis dolores magnam non, praesentium recusandae, impedit excepturi enim aliquid.
+    </p>
+</body>
+</html>
