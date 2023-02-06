@@ -3,6 +3,7 @@ async function obtenMensaje() {
         setTimeout(() => {
             let mensaje = "Este es el mensaje";
             resolve(mensaje)
+            throw "Errorrr";
         }, 1000);
     })
 }
@@ -10,6 +11,12 @@ async function obtenMensaje() {
 async function imprimeMensaje() {
     const mensaje = await obtenMensaje()
     console.log("Mensaje... ", mensaje);
+    // try{
+    //     console.log("Mensaje... ", mensaje);
+    // }catch(e){
+    //     console.log(e);
+    // }
+    
 }
 
 imprimeMensaje();
