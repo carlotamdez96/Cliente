@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var array = new Array;
+            var map = new Map();
+            async function recuperaDatos(){
+                const response = await fetch("https://opendata.gijon.es/descargar.php?id=31&tipo=JSON");
+                const barrios = await response.json();
+                //Funcion
+                trataBarrios(barrios);
+                for (let [nombre,tarjetas] of map) {
+                    document.querySelector("ul").innerHTML+=`<li>${nombre}: ${tarjetas}</li>`
+                }
+                //Ahora voy a imprimir solo las tarjetas del barrio del nataoyo
+                
+                function esElBarrio(valor){
+                    return valor==="El Natahoyo";
+                }
+                const resultado = array.filter(esElBarrio);
+                for (const iterator of resultado) {
+                    console.log(iterator);
+                }
+            }
+
+            function trataBarrios(barrios){
+                for (let barrio of barrios.barrios.barrio) {
+                    array.push(barrio.nombre);
+                
+                    map.set(barrio.nombre,barrio.tarjetas);
+                }
+            }
+            recuperaDatos();
+        }
+    </script>
+</head>
+<body>
+    <ul></ul>
+</body>
+</html>
