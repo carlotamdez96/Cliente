@@ -14,6 +14,15 @@
                 const barrios = await response.json();
                 //Funcion
                 trataBarrios(barrios);
+                //Funcion de filtrado
+                function filtradoLetra(valor){
+                    if(valor.charAt(0)=="E"){
+                        return true;
+                    }
+                }
+               var filtrado = array.filter(filtradoLetra);
+               console.log(filtrado);
+                //Pinta en el documento
                 for (let [nombre,tarjetas] of map) {
                     document.querySelector("ul").innerHTML+=`<li>${nombre}: ${tarjetas}</li>`
                 }
