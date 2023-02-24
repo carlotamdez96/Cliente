@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio numero 2 de uso del Grid. Cabecera</title>
+<style>
+  .tabla{
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    gap: 2px;
+    width: 450px;
+  }
+  .tabla div{
+    background-color: grey;
+    color: white;
+    padding: 18px;
+    text-align: center;
+  }
+  .cabecera{
+    grid-column: 1/4;
+  }
+  .combinada{
+    grid-row: 2/4;
+  }
+</style>
+</head>
+<body>
+<div class="tabla">
+  <div class="cabecera"> celda 1</div>
+  <div class="combinada"> celda 2</div>
+  <div> celda 3</div>
+  <div> celda 4</div>
+  <div> celda 5</div>
+  <div> celda 6</div>
+  
+</div>
+</body>
+</html>

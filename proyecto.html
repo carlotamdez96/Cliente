@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/daec488c78.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .contenedor{
+            display: grid;
+            grid-template-columns: repeat(2,30px);
+            /* //En la descripcion de la finca tengo las filas y las columnas de la finca */
+    
+            gap: 2px;
+            
+        }
+        .arbol{
+            background-color: rgb(105, 185, 255);
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        window.onload = function(){
+            const forma = document.querySelector(".contenedor");
+            async function recuperaDatos(){
+                const response = await fetch("arboles.json");
+                const arboles = await response.json();
+                trataArboles(arboles);
+            }
+            
+            function trataArboles(arboles){
+                
+                for (const arbol of arboles) {
+                    console.log(arbol);
+                    var elemento = document.createElement("div");
+                    elemento.classList.add("arbol");
+                    elemento.classList.add(arbol.idarbol);
+                    elemento.classList.add("fila"+arbol.fila);
+                    elemento.classList.add("columna"+arbol.columna);
+                    elemento.title=`fila: ${arbol.fila}- columna: ${arbol.columna}`;
+                    var i = document.createElement("i");
+                    i.classList.add("fa-solid");
+                    i.classList.add("fa-apple-whole");
+                    elemento.appendChild(i);
+                    forma.appendChild(elemento);
+                    // Desde js cojo la fila y la columna y le digo con .style.column desde que fila ira y desde que columna a que columna dibujaremos en el grid
+
+
+                }
+            }
+            recuperaDatos();
+        }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+
+    </div>
+</body>
+</html>

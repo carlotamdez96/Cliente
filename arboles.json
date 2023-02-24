@@ -1,0 +1,62 @@
+[
+    {
+        "idarbol":1,
+        "fila":1,
+        "columna":1,
+        "fechaplantacion":"2000-10-10",
+        "informacion":"Arbol saludable",
+        "estado":"no",
+        "latitud": "12345",
+        "variedad":{
+            "idvariedad":1,
+            "denominacion":"Suanina",
+            "caracteristicas":"Manzana dulce"
+
+        }
+    },
+    {
+        "idarbol":2,
+        "fila":2,
+        "columna":1,
+        "fechaplantacion":"2000-10-10",
+        "informacion":"Arbol saludable",
+        "estado":"no",
+        "latitud": "1233s45",
+        "variedad":{
+            "idvariedad":1,
+            "denominacion":"Suanina",
+            "caracteristicas":"Manzana dulce"
+
+        }
+    },
+    {
+        "idarbol":3,
+        "fila":3,
+        "columna":1,
+        "fechaplantacion":"2000-10-10",
+        "informacion":"Arbol saludable",
+        "estado":"no",
+        "latitud": "12345",
+        "variedad":{
+            "idvariedad":1,
+            "denominacion":"Suanina",
+            "caracteristicas":"Manzana dulce"
+
+        }
+    },
+    {
+        "idarbol":4,
+        "fila":4,
+        "columna":1,
+        "fechaplantacion":"2000-10-10",
+        "informacion":"Arbol saludable",
+        "estado":"no",
+        "latitud": "12345",
+        "variedad":{
+            "idvariedad":1,
+            "denominacion":"Suanina",
+            "caracteristicas":"Manzana dulce"
+
+        }
+    }
+]

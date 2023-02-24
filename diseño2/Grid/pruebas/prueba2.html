@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            display: grid;
+            width: 450px;
+            gap: 2px;
+            grid-template-columns: 50px, 300px;
+            border: 1px solid red;
+          
+        }
+        .cabecera{
+            background-color: orange;
+            grid-column: 2/3;
+            padding: 20px;
+            text-align: center;
+            order: 1;
+
+        }
+        .celda2{
+            background-color: grey;
+            padding: 40px;
+            text-align: center;
+            /* order: 2; */
+        }
+        .celda3{
+            background-color: grey;
+            text-align: center;
+        }
+        .celda4{
+            grid-column: 1/3;
+            text-align: center;
+            background-color: orange;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cabecera">Celda 1</div>
+        <div class="celda2">Celda 2</div>
+        <div class="celda3">Celda 3</div>
+        <div class="celda4">Celda 4</div>
+    </div>
+</body>
+</html>
