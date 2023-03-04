@@ -9,19 +9,21 @@
     <style>
         .contenedor{
             display: grid;
-            width: 80%;
+            width: 50%;
             height: 70vh;
             margin: 0 auto;
-           grid-template-rows: repeat(3,1fr);
+            border: 2px solid black;
            grid-auto-flow: column dense;
             /* //En la descripcion de la finca tengo las filas y las columnas de la finca */
-            grid-template-columns: repeat(3,1fr);
-            gap: 2px;
+            /* grid-template-columns: repeat(2,auto); */
+            
             
         }
         .arbol{
-            background-color: rgb(105, 185, 255);
+          
+           border: 1px solid black;
             text-align: center;
+            font-size: 1.7em;
            
             
         }
@@ -37,8 +39,21 @@
             }
             
             function trataArboles(arboles){
+                var filamayor=0;
+                var columnamayor=0;
+                for (const arbol of arboles) {
+                    if(arbol.fila>filamayor){
+                        filamayor=arbol.fila
+                    }
+                    if(arbol.columna>columnamayor){
+                        columnamayor=arbol.columna;
+                    }
+                    
+                }
+
                 
                 for (const arbol of arboles) {
+                    
                     console.log(arbol);
                     var elemento = document.createElement("div");
                     elemento.classList.add("arbol");
@@ -49,12 +64,26 @@
                     var i = document.createElement("i");
                     i.classList.add("fa-solid");
                     i.classList.add("fa-apple-whole");
+                    elemento.style["grid-column"]=`${arbol.columna}/span 1`;
+                    elemento.style["grid-row"]=`${arbol.fila}/span 1`;
                     elemento.appendChild(i);
                     forma.appendChild(elemento);
+                    
                     // Desde js cojo la fila y la columna y le digo con .style.column desde que fila ira y desde que columna a que columna dibujaremos en el grid
 
 
                 }
+             
+                forma.style["grid-template-rows"]=`repeat(${filamayor},auto)`;
+                forma.style["grid-template-columns"]=`repeat(${columnamayor},auto)`;
+
+
+                // for (let index = 0; index < columnamayor; index++) {
+                //     for (let y = 0; y < filamayor; y++) {
+                        
+                //     }
+                    
+                // }
             }
             recuperaDatos();
         }

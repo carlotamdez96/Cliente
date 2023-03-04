@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estilos areas</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .grid{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            text-align: center;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 100px 60px 1fr;
+            grid-template-areas: 
+            "header header"
+            "nav nav"
+            "aside section"
+            ;
+            
+        }
+        .header{
+            grid-area: header;
+            background-color: green;
+        }
+        .nav{
+            background-color: aqua;
+            grid-area: nav;
+        }
+        .aside{
+            background-color: violet;
+            grid-area: aside;
+        }
+        .section{
+            background-color: aliceblue;
+            grid-area: section;
+        }
+        .menu{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .submenu{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header class="header">Prueba de grid</header>
+        <nav class="nav">
+            <ul class="menu">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </nav>
+        <aside class="aside">
+            <ul class="submenu">
+                <li>Prueba 1</li>
+                <li>Prueba 2</li>
+                <li>Prueba 3</li>
+            </ul>
+        </aside>
+        <section class="section">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis facere ducimus ex possimus? Nihil non repellendus odio vel, voluptatem ducimus vitae doloribus, quo error accusamus dolorem quibusdam culpa, mollitia unde?
+            Recusandae natus dolores neque, distinctio expedita rerum odit vero iste debitis mollitia sapiente harum nam voluptates earum, assumenda fugiat vitae adipisci eveniet ipsa velit fuga nemo eum quasi! Optio, distinctio.
+            Optio perferendis corporis magni laborum, quas amet ut iste nobis veniam blanditiis, mollitia dolorum autem accusamus nostrum nemo numquam. Fugiat rerum labore, tenetur quas in id necessitatibus voluptate doloribus reprehenderit.
+            Facilis quia labore veniam aut at mollitia perferendis quos odio, voluptatem, nostrum deleniti voluptas neque fuga aperiam illum libero dicta veritatis ut dolor. Sapiente ea quisquam perferendis numquam dolorum enim.
+            Accusantium minus et aperiam error, delectus perferendis veniam cupiditate, est facere debitis, in ipsa iure? Consequuntur impedit illum aperiam dolore quo, omnis quaerat tempore, non architecto, nam rerum culpa provident!
+            Est optio aliquam reprehenderit corrupti aperiam animi nisi dolorem. Quaerat sunt labore non ipsum enim est quas quasi doloremque molestiae ducimus porro omnis odio, debitis qui voluptas eveniet quia nam.
+            Nemo velit impedit magnam aut eum tenetur hic eligendi iusto pariatur vel itaque enim deserunt nam ipsa quia alias beatae, doloribus animi. Quaerat assumenda odit in ducimus molestias! Ut, provident?
+            Veritatis tenetur veniam assumenda debitis totam impedit architecto! Magni, veniam a. Omnis, aliquam perferendis, libero id dignissimos dolor impedit eos quisquam dolore explicabo ad! Corporis dicta porro earum cupiditate repudiandae?
+            Accusantium qui incidunt sapiente cumque earum molestiae, aliquid cupiditate, in ea, veritatis eaque quae minus. Optio blanditiis ab ad, veniam aperiam nobis id consequatur accusantium earum natus a expedita temporibus!
+            Iusto inventore distinctio, accusantium incidunt commodi dolore ducimus sed itaque recusandae ex expedita eligendi ipsa reiciendis nobis nihil non in, ab nisi! Blanditiis, pariatur ex possimus incidunt temporibus necessitatibus fugit.</p>
+        </section>
+    </div>
+</body>
+</html>
