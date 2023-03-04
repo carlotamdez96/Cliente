@@ -1,0 +1,124 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
+  a[href="#top"] {
+    margin: 1rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    margin-bottom: 100vh;
+    font-size: 125%;
+  }
+
+  .menu li {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border: medium solid #000;
+  }
+
+  .item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #666;
+    border: medium solid #999;
+  }
+
+
+  /*Grid explicito*/
+
+  .grid-explicit{
+    display: grid;
+    /*Grid 3x3*/
+    grid-template-rows: 2rem 20vh 30%;
+    grid-template-columns: 50% 100px 1fr;
+    /*Grid de 5cx4r*/
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: repeat(4,25%);
+    grid-template-rows: repeat(4,auto);
+
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(4,1fr);
+
+    /*Grid de 4cx5r*/
+    grid-template-columns: 20% repeat(2,30%) 20%;
+    grid-template-rows: repeat(5,auto);
+    column-gap: 10px;
+   
+    /*El primer valor es para row y el segundo column*/
+    gap: 1vw 1vh;
+    gap: 0;
+
+  }
+  .grid-explicit .item:nth-child(10){
+    color: red;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    grid-column: 3/5;  
+    /*Primero valores de row y luego column*/
+    grid-area: 2/3/3/5;
+  }
+  .grid-explicit .item:nth-child(12){
+    color: cyan;
+    grid-row: span 2;
+    grid-column: span 3;
+  }
+  .grid-explicit .item:nth-child(15){
+    color: red;
+    grid-row: 1/span 2;
+    grid-column: 1/span 2;
+  }
+
+/*Grid lines names*/
+.grid-line-names{
+     /*Grid 3x3*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: [c1]1fr [c2] 1fr [c3] 1fr [c4];
+    grid-template-rows: [r1]1fr [r2] 1fr [r3] 1fr [r4];
+    grid-template-rows: [r1]auto [r2] auto [r3] auto [r4];
+
+}
+.grid-line-names .item:nth-child(3){
+    color: red;
+    grid-row: r3/r4;
+    grid-column: c1/c4;
+    
+}

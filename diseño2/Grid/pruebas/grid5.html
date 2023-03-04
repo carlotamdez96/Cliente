@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            width: 50%;
+            height: 50vh;
+            margin: 0 auto;
+            display: grid;
+            
+            grid-template-rows: repeat(3,auto);
+            grid-auto-flow: column dense;
+            gap: 2px;
+        }
+        .contenedor div{
+            background-color: bisque;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div>celda 1</div>
+        <div>celda 2</div>
+        <div>celda 3</div>
+        <div>celda 4</div>
+        <div>celda 5</div>
+        <div>celda 6</div>
+    </div>
+</body>
+</html>

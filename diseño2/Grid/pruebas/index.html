@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-auto-rows: minmax(100px,auto);
+            gap: 1em;
+            justify-items: stretch;
+            align-items: stretch;
+        }
+        .grid div{
+            background-color: grey;
+            padding: 1em;
+        }
+       .grid div:hover{
+            border: 1px solid yellow
+        }
+      .element1{
+        grid-column: 1/4;
+        grid-row: 1/3;
+      }
+      .element2{
+        grid-column: 1/2;
+      }
+      .element3{
+        grid-column: 2/4;
+        /* order: -1; */
+      }
+       
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="element1">elements1</div>
+        <div class="element2">elements2</div>
+        <div class="element3">elements3</div>
+        <div class="element4">elements4</div>
+        <div class="element5">elements5</div>
+        <div class="element6">elements6</div>
+        
+       
+    </div>
+</body>
+</html>

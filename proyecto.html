@@ -9,15 +9,21 @@
     <style>
         .contenedor{
             display: grid;
-            grid-template-columns: repeat(2,30px);
+            width: 80%;
+            height: 70vh;
+            margin: 0 auto;
+           grid-template-rows: repeat(3,1fr);
+           grid-auto-flow: column dense;
             /* //En la descripcion de la finca tengo las filas y las columnas de la finca */
-    
+            grid-template-columns: repeat(3,1fr);
             gap: 2px;
             
         }
         .arbol{
             background-color: rgb(105, 185, 255);
             text-align: center;
+           
+            
         }
     </style>
     <script>
