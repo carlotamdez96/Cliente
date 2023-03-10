@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        div[draggable]{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .contenedor{
+            display: flex;
+           
+        }
+        .destino{
+            margin-top: 10px;
+            width: 200px;
+            height: 200px;
+            border: 1px dashed grey;
+            box-sizing: border-box;
+        }
+        .hide{
+            display: none;
+        }
+        .contenedordragable{
+            width: 200px;
+            height: 200px;
+        }
+        .bordes{
+            border: 2px  dotted red;
+        }
+    </style>
+    <script>
+        window.onload= function(){
+        const elementodraggable = document.querySelector(".elementodraggable");
+        elementodraggable.addEventListener("dragstart",dragStart);
+
+        function dragStart(e){
+            console.log("Drag stars..");
+            e.dataTransfer.setData('text/plain',e.target.id);
+            setTimeout(()=>{
+                elementodraggable.classList.add("hide");
+            },0);
+           
+        }
+
+        //Trato los desinos que estan guardados en class destino
+        const destinos = document.querySelectorAll(".destino");
+        for (let destino of destinos) {
+            //Un manejador de evento para dragenter, dragover,dragleave y drop
+            destino.addEventListener("dragenter",dragEnter);//Cuando pasa sobre destino
+            destino.addEventListener("dragover",dragOver);
+            destino.addEventListener("dragleave",dragLeave);//cuando se arrastra fuera del destino
+            destino.addEventListener("drop",drop);//En caso del soltar el objeto sobre el objetivo
+
+        }
+        //Funciones
+        function dragEnter(e){
+            console.log("DragEnter..");
+            e.preventDefault();
+            e.target.classList.add("bordes");
+        }
+        function dragOver(e){
+            e.preventDefault();
+            console.log("DragOver..");
+        }
+        function dragLeave(e){
+            console.log("drag leave..");
+            this.classList.remove("bordes");
+        }
+        function drop(e){
+            
+            e.target.classList.remove("bordes");
+            console.log("drop..");
+            //Recupero el objeto almacenado en datatransfer
+
+            const id = e.dataTransfer.getData('text/plain');
+            const elem = document.getElementById(id);
+            e.target.appendChild(elem);
+            elem.classList.remove("hide");
+        }
+
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="contenedordragable">
+        <div class="elementodraggable" id="elementodraggable" draggable="true"></div>
+    </div>
+  
+    <div class="contenedor">
+        <div class="destino destino1"></div>
+        <div class="destino destino2"></div>
+        <div class="destino destino3"></div>
+    </div>
+    
+</body>
+</html>

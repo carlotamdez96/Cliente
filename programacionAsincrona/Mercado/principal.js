@@ -16,6 +16,7 @@ window.onload=function(){
        
          
     }
+    
 
     function tratarValores(frutas){
 
@@ -39,6 +40,7 @@ window.onload=function(){
         }
   
     }
+
 
     recuperaValores();
     
