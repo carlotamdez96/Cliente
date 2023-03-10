@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        
+        .imagen{
+            width: 100%;
+          
+        }
+        .encabezado{
+            grid-area: header;
+            background-color: aqua;
+        }
+        .izquierda{
+            grid-area: aside;
+            background-color: bisque;
+        }
+        .derecha{
+            grid-area: aside2;
+            background-color: bisque;
+        }
+        .contenido{
+            grid-area: contenido;
+            
+        }
+        .subcontenido1{
+            grid-area: subcontenido1;
+            background-color: orange;
+        }
+        .subcontenido2{
+            grid-area: subcontenido2;
+            background-color: pink;
+        }
+        /*Tablets*/
+        @media (min-width: 768px) {
+            .contenedor{
+                display: grid;
+                gap: 10px;
+                grid-template-columns:200px 1fr 1fr ;
+                grid-template-areas: 
+                "header header header "
+                "aside contenido contenido "
+                "aside contenido contenido "
+                "aside contenido contenido "
+                "aside2 subcontenido1 subcontenido2 "
+                ;
+            }
+        }
+        
+      /*Pantallas grandes*/
+        @media (min-width: 1024px) { 
+            .contenedor{
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr 200px;
+            grid-template-areas: 
+            "header header header header"
+            "aside contenido contenido aside2"
+            "aside contenido contenido aside2"
+            "aside contenido contenido aside2"
+            "aside subcontenido1 subcontenido2 aside2"
+            ;
+        }
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+    <header class="encabezado">
+        <h1>Ejercicio CSS GRID</h1>
+    </header>
+    <aside class="izquierda">
+        <p>Lateral 1</p>
+    </aside>
+   <article class="contenido">
+    <img class="imagen" src="./cuencoManzanas2.jpg">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis vero, ad, facere sit neque cumque vel iure quae molestias odit quidem mollitia animi. Natus iste quis consequuntur quisquam a?
+    Iusto id voluptatem aut sed repellendus voluptates tempore vitae animi, nesciunt molestias ipsum quibusdam, recusandae dolorem! Fugiat provident incidunt fuga repudiandae, molestias voluptates alias sint, ut, iure saepe itaque eaque?
+    Error maiores nihil voluptas dolorum asperiores accusantium totam numquam vitae? Soluta nobis ad quaerat aliquam voluptate quo reiciendis, at quas cum obcaecati adipisci inventore ipsa amet facilis alias iste. Molestiae?
+    Ex deserunt debitis nulla. Ab aspernatur consequatur hic dolore dolorum voluptatum molestias veritatis, at voluptates distinctio. Id magni doloribus illo corporis illum dignissimos alias dolorem, earum, suscipit minus nobis aperiam.
+    Quidem blanditiis debitis eum illo cupiditate saepe sunt dolore aperiam, voluptatem necessitatibus iste suscipit non veniam perspiciatis! Et id voluptatum ut aliquam eos, delectus, ratione quo consectetur eveniet nisi fuga.</p>
+   </article>
+   <article class="subcontenido1">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis maxime molestias numquam cumque provident minus, id, quas ducimus dolores ad ipsum fugiat! Maiores, quaerat? In quis cum incidunt labore!
+    Iste eius assumenda vel quis, adipisci rem eveniet, eum, ea in veritatis recusandae incidunt! Delectus, rem ratione quibusdam voluptatibus culpa dolorum quasi minus odio eos! Autem amet optio culpa nemo.
+.</p>
+   </article>
+   <article class="subcontenido2">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore perspiciatis maxime molestias numquam cumque provident minus, id, quas ducimus dolores ad ipsum fugiat! Maiores, quaerat? In quis cum incidunt labore!
+    Iste eius assumenda vel quis, adipisci rem eveniet, eum, ea in veritatis recusandae incidunt! Delectus, rem ratione quibusdam voluptatibus culpa dolorum quasi minus odio eos! Autem amet optio culpa nemo.
+ </p>
+   </article>
+   <aside class="derecha">
+    <p>Lateral 2</p>
+</aside>
+</div>
+</body>
+</html>

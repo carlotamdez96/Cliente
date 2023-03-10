@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .contenedor{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            grid-template-areas: 
+            "imagen2 texto1 imagen1 "
+            "imagen2 texto2 ."
+            "texto3 imagen3 ."
+            ;
+            
+           
+        }
+        p{
+            height: 100%;
+            margin-top: 0;
+          text-align: center;
+        }
+        img{
+            width: 100%;
+        }
+        .contenedor :nth-child(1){
+            grid-area: texto1;
+            background-color: aqua;
+        }
+        .contenedor :nth-child(2){
+            grid-area: imagen1;
+        }
+        .contenedor :nth-child(3){
+            grid-area: imagen2;
+        }
+        .contenedor :nth-child(4){
+            grid-area: texto2;
+            background-color: pink;
+        }
+        .contenedor :nth-child(5){
+            grid-area: imagen3;
+        }
+        .contenedor :nth-child(6){
+            grid-area: texto3;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <p>Esto es una prueba, Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quas, ut hic quos deleniti aspernatur exercitationem tenetur. Quae, quis dolor. Minima quibusdam eius aspernatur explicabo commodi iusto qui maiores amet.</p>
+        <img src="./cuencoManzanas.jpg">
+        <img src="./13 Best Apple Orchards in New England.png">
+        <p>Esto es una prueba Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta inventore vero iure voluptate laboriosam quod distinctio aut voluptatibus. Quaerat esse pariatur alias delectus explicabo a! Molestiae facilis sunt iure?</p>
+        <img src="./cuencoManzanas2.jpg">
+        <p>Esto es una prueba Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quod culpa quisquam veniam sequi reprehenderit consequuntur. Voluptatem ratione quae fugiat, quasi temporibus modi, voluptate corporis sunt voluptas molestiae inventore suscipit?</p>
+    </div>
+</body>
+</html>
