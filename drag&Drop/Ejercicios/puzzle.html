@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Verdana, sans-serif;
+        }
+
+        #piezas {
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            margin: auto;
+            justify-content: center;
+        }
+
+        #puzzle {
+            border: 1px solid black;
+            width: 318px;
+            height: 495px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+
+        .pieza {
+            width: 106px;
+            height: 165px;
+            background-size: cover;
+            margin: 10px;
+        }
+
+        .placeholder {
+            background-color: #F2F2F2;
+            outline: 1px solid #333;
+            width: 106px;
+            height: 165px;
+            transition: 1s;
+        }
+
+        .placeholder.hover {
+            background-color: orange;
+        }
+
+        .placeholder .pieza {
+            margin: 0;
+        }
+
+        #mensaje {
+            color: black;
+            text-align: center;
+            display: none;
+        }
+
+        .ganaste {
+            background-color: #B3D67C;
+        }
+
+        .ganaste #mensaje {
+            display: block;
+        }
+
+        .ganaste .placeholder {
+            outline: none;
+        }
+
+        .ganaste #piezas {
+            display: none;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="puzzle"></div>
+        <div id="piezas"></div>
+    </div>
+    <h1 id="mensaje">¡Ganaste!</h1>
+    <script>
+        window.onload= function(){
+            const imagenes = [
+                "1","2","3",
+                "4","5","6",
+                "7","8","9"
+            ];
+
+            const puzzle = document.getElementById("puzzle");
+            const piezas = document.getElementById("piezas");
+            const mensaje = document.getElementById("mensaje");
+
+
+            //Primera parte armo las piezas del rompecabezas de manera random
+
+            let terminado = imagenes.length;
+
+            while(imagenes.length){
+                //Generar numero random para utilizar como subindice
+                const index = Math.floor(Math.random()* imagenes.length);
+                console.log(index);
+
+                //Dibujar en la pantalla las piezas
+                const div = document.createElement("div");
+                div.classList.add("pieza");
+                div.id= imagenes[index];
+                div.style.backgroundImage=`url("imagenes/${imagenes[index]}.png")`;
+                div.draggable=true;
+                piezas.appendChild(div);
+                //Eliminar imagenes del array
+                imagenes.splice(index,1);
+                
+            }
+
+            //Generar las cajas donde se pueden soltar las imagenes
+
+            for(let i =1; i<=terminado;i++){
+                //Crear un div
+                const div1 = document.createElement("div");
+                div1.className='placeholder';
+                //La imagen 1 en el div 1 y asi todos
+                //Creo un atributo personalizado donde guardare el numero
+                div1.dataset.id = i;
+                puzzle.appendChild(div1);
+                
+            }
+
+            //Implementar el drag & drop
+            piezas.addEventListener("dragstart",e =>{
+                e.dataTransfer.setData('text/plain',e.target.id);
+            });
+
+            puzzle.addEventListener("dragover",e=>{
+                e.preventDefault();
+                 //Cuando arrastro el elemento sobre un destino posible
+                 e.target.classList.add("hover");
+            });
+            puzzle.addEventListener("dragleave",e=>{
+                e.target.classList.remove("hover");
+            });
+            puzzle.addEventListener("drop",e=>{
+                e.target.classList.remove("hover");
+                //Drop selectivo
+                const numero = e.dataTransfer.getData('text/plain'); //El numero de la pieza que suelto
+                
+                // console.log(id);
+                //e.target esta apuntando a los contenedores de puzzle, pero neceisto saber la pieza q arrastra el usuario, para eso transfiero infomracion
+                // e.target.dataset.id El numero de la caja donde lo estoy soltando
+                console.log("Caja:"+numero);
+                console.log("Pieza:"+e.target.dataset.id);
+
+                if(e.target.dataset.id === numero){
+                    e.target.appendChild(document.getElementById(numero));
+                    
+                    terminado --;
+                    if(terminado ==0){
+                        document.body.classList.add("ganaste");
+                    }
+                }
+
+            });
+            
+            
+           
+
+
+        }
+    </script>
+</body>
+</html>

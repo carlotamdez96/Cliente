@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./reset (1).css" rel="stylesheet">
+    <title>Listado</title>
+
+    <style>
+        .hide{
+            display: none;
+        }
+        body{
+            background-color: grey;
+            
+        }
+        h1{
+            background-color: white;
+            height: 10vh;
+        }
+        img{
+            width: 150px;
+            border-radius: 50%;
+        }
+        .contenedor{
+            background-color: pink;
+            /* margin-top: 10px; */
+            width: 80%;
+            height: 80vh;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .ficha{
+            background-color: white;
+            width: 90%;
+        }
+        .contenido{
+            display: flex;
+            /* background-color: white; */
+            gap: 30px;
+            /* justify-content: space-around; */
+            align-items: center;
+        }
+        th{
+            font-size: 1.4em;
+            color: blue;
+        }
+        td,th{
+            padding-right: 50px;
+            padding-left: 50px;
+            
+        }
+        table{
+            height: 50px;
+        }
+    </style>
+        <script>
+            window.onload= function(){
+                const fichas = document.querySelectorAll(".ficha");
+                document.querySelector(".contenedor").addEventListener("dragstart",dragStart);
+                for (let ficha of fichas) {
+                    
+                    ficha.addEventListener("dragenter",dragEnter);
+                    ficha.addEventListener("dragover",dragOver);
+                    ficha.addEventListener("dragleave",dragLeave);
+                    ficha.addEventListener("drop",drop);
+                    
+                }
+                function dragStart(e){
+                    console.log("dragstart...");
+                    e.dataTransfer.setData('text/plain',e.target.id);
+                    setTimeout(()=>{
+                        e.target.classList.add("hide");
+                    },0);
+                   
+                }
+                function dragEnter(e){
+                    e.preventDefault();
+                    console.log("DragEnter..")
+                }
+                function dragOver(e){
+                    e.preventDefault();
+                    console.log("dragOver..")
+                }
+                function dragLeave(e){
+                    console.log("dragleave");
+                }
+                function drop(e){
+                    console.log("Drop--");
+                    const id = e.dataTransfer.getData('text/plain');
+                    const elem = document.getElementById(id);
+                    document.querySelector(".contenedor").appendChild(elem);
+                    elem.classList.remove("hide");
+                }
+
+            }
+        </script>
+</head>
+<body>
+    <h1>Bienvenidos a la clasificacion</h1>
+    <div class="contenedor">
+        <div class="ficha1 ficha" draggable="true" id="ficha1">
+            <div class="contenido">
+                <img src="./imagenChica.jpeg" alt="imagen_chica">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                    </tr>
+                    <tr>
+                        <td>Sofia1</td>
+                        <td>22</td>
+                        <td>sofia@hotmail.com</td>
+                    </tr>
+                </table>
+            </div>
+           
+        </div>
+        <div class="ficha2 ficha" draggable="true" id="ficha2">
+            <div class="contenido">
+                <img src="./imagenChica.jpeg" alt="imagen_chica">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                    </tr>
+                    <tr>
+                        <td>Sofia2</td>
+                        <td>22</td>
+                        <td>sofia@hotmail.com</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        <div class="ficha3 ficha" draggable="true"  id="ficha3">
+            <div class="contenido">
+                <img src="./imagenChica.jpeg" alt="imagen_chica">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                    </tr>
+                    <tr>
+                        <td>Sofia3</td>
+                        <td>22</td>
+                        <td>sofia@hotmail.com</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
