@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .panelImagenes{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction:column;
+            width: 50%;
+            /* height: 400px; */
+            gap: 20px;
+        }
+        .solucion{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .imagen{
+            width: 300px;
+            height: 200px;
+
+            border: 2px solid black;
+          
+        }
+        .imagenP{
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* background-attachment: fixed; */
+            width: 300px;
+            height: 200px;
+
+        }
+        .item{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .hide{
+            display: none;
+            
+        }
+        .hover{
+            background-color: orange;
+        }
+    </style>
+    <script>
+        window.onload= function(){
+            //Recupero los obejtos del json
+            var miMap = new Map();
+            var items = document.querySelectorAll(".item");
+            var panelImagenes = document.querySelector(".panelImagenes");
+                 
+            recuperaDatos();
+            async function recuperaDatos (){
+                const response = await fetch("./series.json");
+                const series = await response.json();
+                trataSeries(series);
+                
+            }
+            function trataSeries(series){
+                for (const serie of series) {
+                    miMap.set(serie.nombre,serie.imagen);
+                    
+                }
+                const tamanio = miMap.size;
+                //Pintare primero los titulos que hay que asociar la imagen (lado derecho)
+                //Primero recupero 3 titulos
+                var array = new Array();
+                for (const [clave,valor] of miMap) {
+                    array.push(clave);
+                }
+                for (let item of items) {
+                    var titulo1 = document.createElement("h2");
+                    
+                    titulo1.textContent= array[generaNum(tamanio)];
+                    titulo1.dataset.id=titulo1.textContent;
+                    item.appendChild(titulo1);
+                    //Pintare las imagenes asociadas a los titulos anteriores
+                    var imagen = document.createElement("div");
+                    imagen.classList.add("imagenP");
+                    imagen.id=titulo1.textContent;
+                    imagen.style.backgroundImage=`url(./imagenesNetflix/${miMap.get(titulo1.textContent)})`;
+                    imagen.draggable=true;
+                    panelImagenes.appendChild(imagen);
+                    titulo1.previousElementSibling.dataset.id=titulo1.textContent;
+                }
+              drag();  
+
+
+            }
+
+      
+            //Eventos drag and drop
+            function drag(){    
+                    
+            var imagenes = document.querySelectorAll(".imagenP");
+                for (let imagen of imagenes) {
+                    imagen.addEventListener("dragstart", e=>{
+                        console.log("Dragstart..."+e.target.id);
+
+                        e.dataTransfer.setData('text/plain',e.target.id);
+                    });
+                }
+                for (let item of items) {
+                    item.addEventListener("dragenter",e =>{
+                        e.target.classList.add("hover");
+                    });
+                    item.addEventListener("dragleave",e=>{
+                        e.target.classList.remove("hover");
+                    });
+                    item.addEventListener("dragover",e =>{
+                        e.preventDefault();
+                    });
+                    item.addEventListener("drop",e=>{
+                        e.target.classList.remove("hover");
+                        const id = e.dataTransfer.getData('text/plain');
+                        console.log(id);
+                        const elem = document.getElementById(id);
+                        console.log(e.target.dataset.id);
+                        if(id===e.target.dataset.id){
+                            e.target.appendChild(elem);
+                        }
+                        elem.classList.remove("hide");
+
+                    })
+                }
+            
+        }
+        function generaNum (numMaximo){
+                return Math.floor(Math.random()*(numMaximo));
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="panelImagenes">
+
+        </div>
+        <div class="solucion">
+            <div class="item1 item">
+                <div class="imagen"></div>
+            </div>
+            <div class="item2 item">
+                <div class="imagen"></div>
+            </div>
+            <div class="item3 item">
+                <div class="imagen"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

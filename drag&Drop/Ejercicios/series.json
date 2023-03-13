@@ -1,0 +1,33 @@
+[
+    {
+        "nombre":"outlander",
+        "imagen":"outlander.jpg"
+    },
+    {
+        "nombre":"bridgerton",
+        "imagen":"Bridgerton.jpg"
+    },
+    {
+        "nombre":"Casa de Papel",
+        "imagen":"casadepapel.jpg"
+    },
+    {
+        "nombre":"Entrevias",
+        "imagen":"entrevias.jpg"
+    },
+    {
+        "nombre":"outerbanks",
+        "imagen":"outerbanks.jpg"
+    }
+    ,
+    {
+        "nombre":"vikingos",
+        "imagen":"vikingos.jpg"
+    }
+    ,
+    {
+        "nombre":"you",
+        "imagen":"you.jpeg"
+    }
+    
+]
