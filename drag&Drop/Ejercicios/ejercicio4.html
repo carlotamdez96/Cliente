@@ -60,42 +60,36 @@
         <script>
             window.onload= function(){
                 const fichas = document.querySelectorAll(".ficha");
-                document.querySelector(".contenedor").addEventListener("dragstart",dragStart);
+                const destino = document.querySelector(".contenedor");
+                destino.addEventListener("dragover",e=>{
+                        e.preventDefault();
+                    });
                 for (let ficha of fichas) {
                     
-                    ficha.addEventListener("dragenter",dragEnter);
-                    ficha.addEventListener("dragover",dragOver);
-                    ficha.addEventListener("dragleave",dragLeave);
-                    ficha.addEventListener("drop",drop);
-                    
-                }
-                function dragStart(e){
-                    console.log("dragstart...");
-                    e.dataTransfer.setData('text/plain',e.target.id);
-                    setTimeout(()=>{
+                    ficha.addEventListener("dragstart",e =>{
+                        console.log("drag start..");
+                        e.dataTransfer.setData('text/plain',e.target.id);
                         e.target.classList.add("hide");
-                    },0);
-                   
-                }
-                function dragEnter(e){
-                    e.preventDefault();
-                    console.log("DragEnter..")
-                }
-                function dragOver(e){
-                    e.preventDefault();
-                    console.log("dragOver..")
-                }
-                function dragLeave(e){
-                    console.log("dragleave");
-                }
-                function drop(e){
-                    console.log("Drop--");
-                    const id = e.dataTransfer.getData('text/plain');
-                    const elem = document.getElementById(id);
-                    document.querySelector(".contenedor").appendChild(elem);
-                    elem.classList.remove("hide");
-                }
+                    });
+                    ficha.addEventListener("dragover",e=>{
+                        e.preventDefault();
+                    });
+                  
+                    ficha.addEventListener("drop",e=>{
+                        const id = e.dataTransfer.getData('text/plain');
+                        const elem = document.getElementById(id);
 
+                        if(e.target.classList.contains("contenedor")){
+                            console.log(e.target,elem);
+                            destino.appendChild(elem);
+                        }else{
+                            console.log(elem,e.target);
+                            destino.insertBefore(elem,e.target);
+                        }
+                        elem.classList.remove("hide");
+                    })
+                }
+             
             }
         </script>
 </head>
@@ -103,57 +97,24 @@
     <h1>Bienvenidos a la clasificacion</h1>
     <div class="contenedor">
         <div class="ficha1 ficha" draggable="true" id="ficha1">
-            <div class="contenido">
+     
                 <img src="./imagenChica.jpeg" alt="imagen_chica">
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Correo</th>
-                    </tr>
-                    <tr>
-                        <td>Sofia1</td>
-                        <td>22</td>
-                        <td>sofia@hotmail.com</td>
-                    </tr>
-                </table>
-            </div>
+               
+          
            
         </div>
         <div class="ficha2 ficha" draggable="true" id="ficha2">
-            <div class="contenido">
-                <img src="./imagenChica.jpeg" alt="imagen_chica">
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Correo</th>
-                    </tr>
-                    <tr>
-                        <td>Sofia2</td>
-                        <td>22</td>
-                        <td>sofia@hotmail.com</td>
-                    </tr>
-                </table>
-            </div>
+            
+                <img src="./imagenes/1.png" alt="imagen_chica">
+               
+      
             
         </div>
         <div class="ficha3 ficha" draggable="true"  id="ficha3">
-            <div class="contenido">
-                <img src="./imagenChica.jpeg" alt="imagen_chica">
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Correo</th>
-                    </tr>
-                    <tr>
-                        <td>Sofia3</td>
-                        <td>22</td>
-                        <td>sofia@hotmail.com</td>
-                    </tr>
-                </table>
-            </div>
+        
+                <img src="./imagenes/2.png" alt="imagen_chica">
+               
+        
         </div>
     </div>
 </body>

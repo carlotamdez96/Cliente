@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset (1).css">
+    <title>Ejercicio 5</title>
+    <style>
+        .contenedor{
+            display: flex;
+            margin-top: 50px;
+            gap: 50px;
+            width: 100%;
+            height: 100vh;
+        }
+        .origen,.destino{
+            border: 2px solid black;
+            height: 50%;
+            width: 25%;
+        }
+        li{
+            padding: 10px;
+            font-size: 1.5em;
+            
+        }
+        .hide{
+            display: none;
+        }
+        .bordes{
+            border: 2px dashed red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            const origen = document.querySelector(".origen");
+            const destino = document.querySelector(".destino");
+            const items = document.querySelectorAll(".item");
+            // origen.addEventListener("dragstart",e =>{
+            //     console.log("dragstart..");
+            //     setTimeout(()=>{
+            //         e.target.classList.add("hide");
+            //     },0);
+            //     e.dataTransfer.setData('text/plain',e.target.id);
+
+            // });
+            for (const item of items ) {
+                item.addEventListener("dragstart", e=>{
+                    console.log("dragstart..");
+                setTimeout(()=>{
+                    e.target.classList.add("hide");
+                },0);
+                e.dataTransfer.setData('text/plain',e.target.id);
+                });
+                
+            };
+            destino.addEventListener("dragstart",e =>{
+                console.log("dragstart..");
+                setTimeout(()=>{
+                    e.target.classList.add("hide");
+                },0);
+                e.dataTransfer.setData('text/plain',e.target.id);
+
+            });
+            destino.addEventListener("dragenter",e=>{
+                console.log("dragEnter...");
+                e.target.classList.add("bordes");
+            });
+            destino.addEventListener("dragleave",e =>{
+                console.log("dragleave..");
+                e.target.classList.remove("bordes");
+            });
+            destino.addEventListener("dragover",e =>{
+                console.log("Dragover..");
+                e.preventDefault();
+            });
+            destino.addEventListener("drop", e=>{
+                console.log("Drop..");
+                e.target.classList.remove("bordes");
+                const id = e.dataTransfer.getData('text/plain');
+                const elem = document.getElementById(id);
+                if(e.target.classList.contains("destino")){
+                    e.target.children[0].appendChild(elem);
+                }else{
+                    console.log(elem,e.target);
+                    destino.children[0].insertBefore(elem,e.target);
+                }
+               
+                elem.classList.remove("hide");
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Coloca y reordena</h1>
+    <div class="contenedor">
+        <div class="origen">
+            <ul>
+                <li id="item1" class="item" draggable="true">item1</li>
+                <li id="item2" class="item" draggable="true">item2</li>
+                <li id="item3" class="item" draggable="true">item3</li>
+                <li id="item4" class="item" draggable="true">item4</li>
+            </ul>
+        </div>
+        <div class="destino">
+            <ul></ul>
+        </div>
+    </div>
+</body>
+</html>

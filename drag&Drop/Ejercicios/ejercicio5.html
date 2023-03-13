@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Contenedores</title>
+    <style>
+        .contenedor{
+            display: flex;
+            gap: 20px;
+        }
+        .rojo,.verde,.azul,.naranja{
+            width: 200px;
+            height: 200px;
+        }
+        .rojo{
+            background-color: red;
+
+        }
+        .verde{
+            background-color: green;
+        }
+        .azul{
+            background-color: blue;
+        }
+        .naranja{
+            background-color: orange;
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            margin: 5px;
+            text-align: center;
+            cursor:move;
+        }
+        .hide{
+            display: none;
+        }
+        .bordes{
+            border: 2px dashed red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            const origen = document.querySelector(".rojo");
+            const verde = document.querySelector(".verde");
+            const contenedor = document.querySelector(".contenedor");
+            // origen.addEventListener("dragstart", e=>{
+            //     console.log("DragStart..","Guardo en transfer:",e.target);
+            //     setTimeout(()=>{
+            //         e.target.classList.add("hide");
+            //     });
+            //     e.dataTransfer.setData('text/plain',e.target.id);
+            // });
+
+            for (let cuadrado of contenedor.children) {
+                cuadrado.addEventListener("dragstart",e=>{
+                    console.log("DragStart..","Guardo en transfer:",e.target);
+                    setTimeout(()=>{
+                        e.target.classList.add("hide");
+                    });
+                     e.dataTransfer.setData('text/plain',e.target.id);
+                });
+                cuadrado.addEventListener("dragenter",e=>{
+                    console.log("dragEnter..");
+                    e.target.classList.add("bordes");
+                });
+                cuadrado.addEventListener("dragover",e=>{
+                    e.preventDefault();
+                });
+                cuadrado.addEventListener("dragleave",e=>{
+                    e.target.classList.remove("bordes");
+                });
+                cuadrado.addEventListener("drop",e=>{
+                    e.target.classList.remove("bordes");
+                    const id = e.dataTransfer.getData('text/plain');
+                    const elemento = document.getElementById(id);
+                    console.log("Drop--");
+                    if(e.target.classList.contains("verde")){
+                        e.target.appendChild(elemento);
+                        elemento.classList.remove("hide");
+                    }
+                    if(e.target.classList.contains("rojo")){
+                        e.target.appendChild(elemento);
+                        elemento.classList.remove("hide");
+                    }
+                    if(e.target.classList.contains("azul")){
+                        e.target.appendChild(elemento);
+                        
+                    }
+                    if(e.target.classList.contains("naranja")){
+                        let cont =id.slice(-1);
+                        
+                        console.log(cont);
+                        e.target.appendChild(elemento);
+                        const elemento2 = document.createElement("div");
+                        elemento2.id=`item${cont+1}`;
+                        elemento2.textContent=`item${cont}`;
+                        elemento2.draggable=true;
+                        elemento2.classList.add("item");
+                        // elemento2.textContent=`item${cont}`;
+
+                        e.target.appendChild(elemento2);
+                        elemento.classList.remove("hide");
+                    }
+                    
+                   
+                })
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="rojo">
+            <div id="item1" class="item" draggable="true">item1</div>
+            <div id="item2" class="item" draggable="true">item2</div>
+            <div id="item3" class="item" draggable="true">item3</div>
+        </div>
+        <div class="verde">
+
+        </div>
+        <div class="azul">
+        Papelera        
+        </div>
+        <div class="naranja">
+        Duplicadora
+        </div>
+    </div>
+</body>
+</html>
