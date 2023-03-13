@@ -1,10 +1,10 @@
 [
     {
-        "nombre":"outlander",
-        "imagen":"outlander.jpg"
+        "nombre":"Outlander",
+        "imagen":"outlander.jpeg"
     },
     {
-        "nombre":"bridgerton",
+        "nombre":"Bridgerton",
         "imagen":"Bridgerton.jpg"
     },
     {
@@ -16,18 +16,50 @@
         "imagen":"entrevias.jpg"
     },
     {
-        "nombre":"outerbanks",
+        "nombre":"Outerbanks",
         "imagen":"outerbanks.jpg"
     }
     ,
     {
-        "nombre":"vikingos",
+        "nombre":"Vikingos",
         "imagen":"vikingos.jpg"
     }
     ,
     {
-        "nombre":"you",
+        "nombre":"YOU",
         "imagen":"you.jpeg"
+    }
+    ,
+    {
+        "nombre":"Breaking Bad",
+        "imagen":"breakingbad.jpg"
+    }
+    ,
+    {
+        "nombre":"Elite",
+        "imagen":"elite.jpg"
+    }
+    ,
+    {
+        "nombre":"La Reina del Flow",
+        "imagen":"lareinadelflow.jpg"
+    }
+    ,
+    {
+        "nombre":"Peaky Blinders",
+        "imagen":"peakyblinders.jpg"
+    },
+    {
+        "nombre":"The Sinner",
+        "imagen":"thesinner.jpeg"
+    },
+    {
+        "nombre":"Suits",
+        "imagen":"suits.jpg"
+    },
+    {
+        "nombre":"New Amsterdam",
+        "imagen":"newamsterdam.jpg"
     }
     
 ]

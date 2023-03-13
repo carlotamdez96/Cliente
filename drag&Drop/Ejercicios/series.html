@@ -6,10 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        h1{
+            height: 10vh;
+            position: relative;
+            padding-left: 90px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgb(253, 122, 122);
+        }
         .contenedor{
             display: flex;
             width: 100%;
-            height: 100vh;
+            height: 70vh;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .panelImagenes{
             display: flex;
@@ -17,7 +29,8 @@
             flex-direction:column;
             width: 50%;
             /* height: 400px; */
-            gap: 20px;
+            gap: 30px;
+            cursor:move;
         }
         .solucion{
             display: flex;
@@ -49,12 +62,28 @@
             
         }
         .hover{
-            background-color: orange;
+            background-color: rgb(255, 40, 2);
+        }
+        .jugar{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.6em;
+            background-color: rgb(241, 16, 53);
+            color: white;
+            width: 300px;
+            text-align: center;
+            
+        }
+        .jugar:hover{
+            color: red;
+            border: 1px solid red;
+            background-color: pink;
         }
     </style>
     <script>
         window.onload= function(){
             //Recupero los obejtos del json
+            var numeros=2;
             var miMap = new Map();
             var items = document.querySelectorAll(".item");
             var panelImagenes = document.querySelector(".panelImagenes");
@@ -82,6 +111,7 @@
                     var titulo1 = document.createElement("h2");
                     
                     titulo1.textContent= array[generaNum(tamanio)];
+                    // delete(array[generaNum(tamanio)]);
                     titulo1.dataset.id=titulo1.textContent;
                     item.appendChild(titulo1);
                     //Pintare las imagenes asociadas a los titulos anteriores
@@ -128,6 +158,15 @@
                         console.log(e.target.dataset.id);
                         if(id===e.target.dataset.id){
                             e.target.appendChild(elem);
+                            numeros--;
+                            if(numeros==0){
+                                var boton= document.createElement("a");
+                                boton.textContent="Seguir Jugando";
+                                boton.classList.add("jugar");
+                                boton.href="series.html";
+                                panelImagenes.appendChild(boton);
+
+                            }
                         }
                         elem.classList.remove("hide");
 
@@ -142,6 +181,7 @@
     </script>
 </head>
 <body>
+    <h1>¿Cuantas series de netflix conoces?</h1>
     <div class="contenedor">
         <div class="panelImagenes">
 
@@ -153,9 +193,9 @@
             <div class="item2 item">
                 <div class="imagen"></div>
             </div>
-            <div class="item3 item">
+            <!-- <div class="item3 item">
                 <div class="imagen"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
