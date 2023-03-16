@@ -31,6 +31,7 @@
             /* height: 400px; */
             gap: 30px;
             cursor:move;
+            
         }
         .solucion{
             display: flex;
@@ -83,6 +84,7 @@
     <script>
         window.onload= function(){
             //Recupero los obejtos del json
+            var reverse=false;
             var numeros=2;
             var miMap = new Map();
             var items = document.querySelectorAll(".item");
@@ -122,6 +124,13 @@
                     imagen.draggable=true;
                     panelImagenes.appendChild(imagen);
                     titulo1.previousElementSibling.dataset.id=titulo1.textContent;
+                    if(!reverse){
+                         panelImagenes.style.flexDirection="column-reverse";
+                         reverse=true;
+                    }else{
+                        reverse=false; 
+                    }
+                
                 }
               drag();  
 
