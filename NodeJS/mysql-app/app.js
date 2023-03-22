@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require("path");
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const app = express();
 const initPage = path.join(__dirname, "/public/index2.html");
