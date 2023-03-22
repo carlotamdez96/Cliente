@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es-es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio APP</title>
+</head>
+
+<body>
+    <h1>Página 2</h1>
+    <script>
+        fetch('http://localhost:8888/users')
+            .then(response => response.json())
+            .then(alumnos => {
+                let html = "";
+                for (let alumno of alumnos) {
+                    html += `<li>${alumno.nombre}</li>`;
+                }
+                document.body.innerHTML += html;
+            })
+
+            .catch(error => console.log("Error...." + error.description))
+    </script>
+</body>
+
+</html>
